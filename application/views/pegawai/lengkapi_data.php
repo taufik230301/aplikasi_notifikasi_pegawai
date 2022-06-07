@@ -17,19 +17,19 @@
                         <li class="breadcrumb-item active">Lengkapi Data</li>
                     </ol>
                     <div class="row">
-                        <form>
+                        <form action="<?=base_url();?>Lengkapi_Data/regist_input" method="POST">
                             <div class="mb-3">
                                 <label for="nama_lengkap" class="form-label">Nama Lengkap</label>
-                                <input type="email" class="form-control" id="nama_lengkap">
+                                <input type="text" class="form-control" id="nama_lengkap" name="nama_lengkap">
                             </div>
                             <div class="mb-3">
                                 <label for="jabatan" class="form-label">Jabatan</label>
                                 <select class="form-select" aria-label="Default select example" name="jabatan">
                                     <option value="Supply Chain Management">Supply Chain Management</option>
                                     <option value="Site It Support">Site It Support</option>
-                                    <option value="Site Human Resource & General Affair  ">Site Human Resource & General
+                                    <option value="Site Human Resource & General Affair">Site Human Resource & General
                                         Affair</option>
-                                    <option value="Site Finance & Accounting ">Site Finance & Accounting </option>
+                                    <option value="Site Finance & Accounting">Site Finance & Accounting </option>
                                     <option value="Reporting & Gov. Relation">Reporting & Gov. Relation</option>
 
                                     <option value="Plant Maintenance">Plant Maintenance</option>
@@ -53,7 +53,7 @@
                             </div>
                             <div class="mb-3">
                                 <label for="no_telp" class="form-label">Nomor HP</label>
-                                <input type="email" class="form-control" id="no_telp">
+                                <input type="text" class="form-control" id="no_telp" name="no_telp">
                             </div>
                             <div class="mb-3">
                                 <label for="alamat" class="form-label">Alamat</label>
