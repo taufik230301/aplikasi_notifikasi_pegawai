@@ -7,7 +7,8 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
     <!-- MATERIAL DESIGN ICONIC FONT -->
-    <link rel="stylesheet" href="<?= base_url();?>assets/register/fonts/material-design-iconic-font/css/material-design-iconic-font.min.css">
+    <link rel="stylesheet"
+        href="<?= base_url();?>assets/register/fonts/material-design-iconic-font/css/material-design-iconic-font.min.css">
 
     <!-- STYLE CSS -->
     <link rel="stylesheet" href="<?= base_url();?>assets/register/css/style.css">
@@ -39,6 +40,9 @@
                     <i class="zmdi zmdi-lock"></i>
                 </div>
                 <button>Register
+                    <i class="zmdi zmdi-arrow-right"></i>
+                </button>
+                <button><a href="<?=base_url();?>Login/index" style="color: white; text-decoration: none;">Login</a>
                     <i class="zmdi zmdi-arrow-right"></i>
                 </button>
             </form>
