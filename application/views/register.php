@@ -21,22 +21,22 @@
             <div class="image-holder">
                 <img src="<?= base_url();?>assets/register/images/registration-form-1.jpg" alt="">
             </div>
-            <form action="">
+            <form action="<?=base_url();?>Register/register_proses" method="POST">
                 <h3>Daftar Akun</h3>
                 <div class="form-wrapper">
-                    <input type="text" placeholder="Username" class="form-control">
+                    <input type="text" placeholder="Username" class="form-control" name="username">
                     <i class="zmdi zmdi-account"></i>
                 </div>
                 <div class="form-wrapper">
-                    <input type="text" placeholder="Email Address" class="form-control">
+                    <input type="text" placeholder="Email Address" class="form-control" name="email">
                     <i class="zmdi zmdi-email"></i>
                 </div>
                 <div class="form-wrapper">
-                    <input type="password" placeholder="Password" class="form-control">
+                    <input type="password" placeholder="Password" class="form-control" name="password">
                     <i class="zmdi zmdi-lock"></i>
                 </div>
                 <div class="form-wrapper">
-                    <input type="password" placeholder="Confirm Password" class="form-control">
+                    <input type="password" placeholder="Confirm Password" class="form-control" name="re_password">
                     <i class="zmdi zmdi-lock"></i>
                 </div>
                 <button>Register

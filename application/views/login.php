@@ -33,6 +33,15 @@
 </head>
 
 <body>
+    <?php if ($this->session->flashdata('input')){ ?>
+    <script>
+    swal({
+        title: "Berhasil Terdaftar!",
+        text: "Silahkan Anda Login!",
+        icon: "success"
+    });
+    </script>
+    <?php } ?>
 
     <div class="limiter">
         <div class="container-login100" style="background-image: url('assets/login/images/bg-01.jpg');">
