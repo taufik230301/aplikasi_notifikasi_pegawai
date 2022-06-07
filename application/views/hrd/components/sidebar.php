@@ -3,20 +3,20 @@
         <div class="sb-sidenav-menu">
             <div class="nav">
                 <div class="sb-sidenav-menu-heading">Core</div>
-                <a class="nav-link" href="index.html">
+                <a class="nav-link" href="<?=base_url();?>Dashboard/dashboard_hrd">
                     <div class="sb-nav-link-icon"><i class="fas fa-tachometer-alt"></i></div>
                     Dashboard
                 </a>
-                <a class="nav-link" href="tables.html">
+                <a class="nav-link" href="<?=base_url();?>Pegawai/view_hrd">
                     <div class="sb-nav-link-icon"><i class="fas fa-users"></i></div>
                     Data Pegawai
                 </a>
-                <a class="nav-link" href="charts.html">
+                <a class="nav-link" href="<?=base_url();?>Jam_Kerja/view_hrd">
                     <div class="sb-nav-link-icon">
                     <i class="fas fa-clock"></i></div>
                     Jam Kerja
                 </a>
-                <a class="nav-link" href="charts.html">
+                <a class="nav-link" href="<?=base_url();?>Cuti/view_hrd">
                     <div class="sb-nav-link-icon"><i class="fas fa-table"></i></div>
                     Cuti
                 </a>
