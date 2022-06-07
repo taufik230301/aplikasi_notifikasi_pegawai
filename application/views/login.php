@@ -35,6 +35,16 @@
 </head>
 
 <body>
+<?php if($this->session->flashdata('success_log_out')){?>
+    <script>
+    swal({
+        title: "Success!",
+        text: "Anda Berhasil Log Out!",
+        icon: "success"
+    });
+    </script>
+    <?php } ?>
+    
     <?php if($this->session->flashdata('loggin_err')){?>
     <script>
     swal({
@@ -70,6 +80,16 @@
     swal({
         title: "Error!",
         text: "Anda Belum Terdaftar!",
+        icon: "error"
+    });
+    </script>
+    <?php } ?>
+
+    <?php if($this->session->flashdata('loggin_no_session')){?>
+    <script>
+    swal({
+        title: "Error!",
+        text: "Sesi Anda Habis!",
         icon: "error"
     });
     </script>
