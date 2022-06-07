@@ -30,10 +30,12 @@
     <link rel="stylesheet" type="text/css" href="<?=base_url();?>assets/login/css/util.css">
     <link rel="stylesheet" type="text/css" href="<?=base_url();?>assets/login/css/main.css">
     <!--===============================================================================================-->
+    <!-- SweetAlert -->
+    <script src="<?= base_url() ?>node_modules/sweetalert/dist/sweetalert.min.js"></script>
 </head>
 
 <body>
-    <?php if ($this->session->flashdata('input')){ ?>
+    <?php if ($this->session->flashdata('input_register')){ ?>
     <script>
     swal({
         title: "Berhasil Terdaftar!",
@@ -49,7 +51,7 @@
                 <span class="login100-form-title p-b-41">
                     Account Login
                 </span>
-                <form class="login100-form validate-form p-b-33 p-t-5">
+                <form class="login100-form validate-form p-b-33 p-t-5" action="<?=base_url();?>Login/proses_login">
 
                     <div class="wrap-input100 validate-input" data-validate="Enter username">
                         <input class="input100" type="text" name="username" placeholder="User name">

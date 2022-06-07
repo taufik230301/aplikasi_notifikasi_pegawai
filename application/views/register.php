@@ -12,10 +12,31 @@
 
     <!-- STYLE CSS -->
     <link rel="stylesheet" href="<?= base_url();?>assets/register/css/style.css">
+
+    <!-- SweetAlert -->
+    <script src="<?= base_url() ?>node_modules/sweetalert/dist/sweetalert.min.js"></script>
 </head>
 
 <body>
+    <?php if ($this->session->flashdata('password_err')){ ?>
+    <script>
+    swal({
+        title: "Error Password!",
+        text: "Ketik Ulang Password!",
+        icon: "error"
+    });
+    </script>
+    <?php } ?>
 
+    <?php if ($this->session->flashdata('eror_register')){ ?>
+    <script>
+    swal({
+        title: "Anda Gagal Terdaftar!",
+        text: "Gagal Terdaftar!",
+        icon: "error"
+    });
+    </script>
+    <?php } ?>
     <div class="wrapper" style="background-image: url('assets/register/images/bg-registration-form-1.jpg');">
         <div class="inner">
             <div class="image-holder">
