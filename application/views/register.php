@@ -3,7 +3,7 @@
 
 <head>
     <meta charset="utf-8">
-    <title>RegistrationForm_v1 by Colorlib</title>
+    <title>Daftar Akun</title>
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
     <!-- MATERIAL DESIGN ICONIC FONT -->
@@ -21,7 +21,7 @@
                 <img src="<?= base_url();?>assets/register/images/registration-form-1.jpg" alt="">
             </div>
             <form action="">
-                <h3>Registration Form</h3>
+                <h3>Daftar Akun</h3>
                 <div class="form-wrapper">
                     <input type="text" placeholder="Username" class="form-control">
                     <i class="zmdi zmdi-account"></i>
