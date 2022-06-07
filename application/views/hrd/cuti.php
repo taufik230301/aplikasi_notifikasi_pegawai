@@ -41,7 +41,7 @@
                                         <th>Office</th>
                                         <th>Age</th>
                                         <th>Start date</th>
-                                        <th>Salary</th>
+                                        <th>Salary date</th>
                                     </tr>
                                 </tfoot>
                                 <tbody>
