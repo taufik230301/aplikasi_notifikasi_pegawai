@@ -9,3 +9,13 @@
 <script src="https://use.fontawesome.com/releases/v6.1.0/js/all.js" crossorigin="anonymous"></script>
 <!-- SweetAlert -->
 <script src="<?= base_url() ?>node_modules/sweetalert/dist/sweetalert.min.js"></script>
+
+<?php if ($this->session->flashdata('success_login')){ ?>
+<script>
+swal({
+    title: "Berhasil Login!",
+    text: "Anda Behasil Login!",
+    icon: "success"
+});
+</script>
+<?php } ?>

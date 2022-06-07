@@ -6,6 +6,17 @@
 </head>
 
 <body class="sb-nav-fixed">
+
+    <?php if ($this->session->flashdata('success_login')){ ?>
+    <script>
+    swal({
+        title: "Berhasil Login!",
+        text: "Anda Behasil Login!",
+        icon: "success"
+    });
+    </script>
+    <?php } ?>
+
     <?php $this->load->view("hrd/components/navbar.php") ?>
     <div id="layoutSidenav">
         <?php $this->load->view("hrd/components/sidebar.php") ?>
