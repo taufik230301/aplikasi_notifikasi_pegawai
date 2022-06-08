@@ -20,7 +20,15 @@
                     <div class="card mb-4">
                         <div class="card-header">
                             <i class="fas fa-table me-1"></i>
-                            Data Jam Kerja <?=$jam_kerja[0]['nama_lengkap']?>
+                            Data Jam Kerja <?php
+                            
+                            if($jam_kerja == NULL){
+                                echo "Kosong";
+                            }else{
+                                echo $jam_kerja[0]['nama_lengkap'];
+                            }
+                            
+                            ?>
                         </div>
                         <div class="card-body">
                             <table id="datatablesSimple">
@@ -30,6 +38,7 @@
                                         <th>Mulai Bekerja</th>
                                         <th>Akhir Bekerja</th>
                                         <th>Hari</th>
+
                                     </tr>
                                 </thead>
                                 <tbody>
@@ -49,8 +58,8 @@
                                         <td><?=$jam_kerja_start?></td>
                                         <td><?=$jam_kerja_end?></td>
                                         <td><?=$hari?></td>
-                                        
                                     </tr>
+
                                     <?php endforeach;?>
                                 </tbody>
                             </table>

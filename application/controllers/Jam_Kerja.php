@@ -37,6 +37,9 @@ class Jam_Kerja extends CI_Controller {
 
 			
 		$data['jam_kerja'] = $this->m_jam_kerja->read_all_data_jam_kerja_by_id($id_user);
+
+		// echo var_dump($data['jam_kerja']);
+		// die();
 		
 			
 

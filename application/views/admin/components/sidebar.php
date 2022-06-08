@@ -20,6 +20,10 @@
                     <div class="sb-nav-link-icon"><i class="fas fa-table"></i></div>
                     Riwayat Cuti
                 </a>
+                <a class="nav-link" href="<?=base_url();?>Cuti/view_admin">
+                    <div class="sb-nav-link-icon"><i class="fas fa-table"></i></div>
+                    Log Notifikasi
+                </a>
             </div>
         </div>
         <div class="sb-sidenav-footer">

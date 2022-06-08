@@ -64,5 +64,31 @@ class M_user extends CI_Model
         else
             return false;
     }
+
+    public function update_tgl_kerja_pegawai($id, $mulai_bekerja, $akhir_bekerja)
+    {
+       $this->db->trans_start();
+
+       $this->db->query("UPDATE user_detail SET mulai_bekerja='$mulai_bekerja', akhir_bekerja='$akhir_bekerja' WHERE id_user_detail='$id'");
+
+       $this->db->trans_complete();
+        if($this->db->trans_status()==true)
+            return true;
+        else
+            return false;
+    }
+
+    public function update_jam_kerja($id)
+    {
+       $this->db->trans_start();
+
+       $this->db->query("UPDATE user_detail SET updated_jam_kerja = NOW() WHERE id_user_detail='$id'");
+
+       $this->db->trans_complete();
+        if($this->db->trans_status()==true)
+            return true;
+        else
+            return false;
+    }
     
 }

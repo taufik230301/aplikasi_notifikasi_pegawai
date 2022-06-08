@@ -52,6 +52,7 @@
                                         <th>Email</th>
                                         <th>Mulai Bekerja</th>
                                         <th>Akhir Bekerja</th>
+                                        <th>Status Cuti</th>
                                         <th>Status Verifikasi</th>
                                         <th>Aksi</th>
                                     </tr>
@@ -66,7 +67,6 @@
                                             $nama_lengkap = $i['nama_lengkap'];
                                             $email = $i['email'];
                                             $jabatan = $i['jabatan'];
-                                           
                                             $mulai_bekerja = $i['mulai_bekerja'];
                                             $akhir_bekerja = $i['akhir_bekerja'];
                                             $id_status_verifikasi = $i['id_status_verifikasi'];
@@ -75,17 +75,40 @@
                                         <td><?=$id?></td>
                                         <td><?=$nama_lengkap?></td>
                                         <td><?=$email?></td>
-                                        
+
                                         <td><?php  if($mulai_bekerja == NULL){?>
                                             <button type="button" class="btn btn-danger">Belum di isi</button>
                                             <?php }else {?>
-                                            $mulai_bekerja
+                                            <?=$mulai_bekerja?>
                                             <?php } ?>
                                         </td>
                                         <td><?php  if($akhir_bekerja == NULL){?>
                                             <button type="button" class="btn btn-danger">Belum di isi</button>
                                             <?php }else {?>
-                                            $akhir_bekerja
+                                            <?= $akhir_bekerja?>
+                                            <?php } ?>
+                                        </td>
+                                        <td>
+                                            <?php 
+                                            $now = time(); // or your date as well
+                                            $your_date = strtotime($akhir_bekerja);
+                                            $datediff = $your_date - $now;
+                                            
+                                            $date = round($datediff / (60 * 60 * 24));
+                                        
+                         
+                                            ?>
+                                            <?php if($mulai_bekerja and $date < 0){?>
+                                            <a href="" data-bs-toggle="modal"
+                                                data-bs-target="#notifikasi_cuti<?=$id_user?>"
+                                                class="btn btn-primary">Kirim Notifikasi Cuti <i
+                                                    class="fas fa-paper-plane"></i>
+                                            </a>
+                                            <?php } elseif($mulai_bekerja == NULL) {?>
+                                                <button type="button" class="btn btn-danger">Belum Di Set</button>
+                                            
+                                            <?php } else {?>
+                                                <button type="button" class="btn btn-danger">Belum Butuh Cuti</button>
                                             <?php } ?>
                                         </td>
                                         <td><?php  if($id_status_verifikasi == 1){?>
@@ -106,7 +129,8 @@
                                             </div>
                                             <div class="table-responsive">
                                                 <div class="table table-striped table-hover ">
-                                                    <a href="<?=base_url();?>Pegawai/detail_pegawai/<?=$id_user?>" class="btn btn-primary">
+                                                    <a href="<?=base_url();?>Pegawai/detail_pegawai/<?=$id_user?>"
+                                                        class="btn btn-primary">
                                                         Detail <i class="fas fa-eye"></i>
                                                     </a>
                                                 </div>
@@ -131,7 +155,8 @@
                                                         <p>Apakah kamu yakin ingin verifikasi data
                                                             ini?</i></b></p>
                                                         <div class="mb-3">
-                                                            <label for="alamat" class="form-label">Pesan Notifikasi</label>
+                                                            <label for="alamat" class="form-label">Pesan
+                                                                Notifikasi</label>
                                                             <textarea class="form-control"
                                                                 placeholder="Leave a comment here"
                                                                 id="floatingTextarea2" style="height: 100px"

@@ -13,4 +13,18 @@ class M_cuti extends CI_Model
         return $hasil->result_array();
     }
 
+    public function create_cuti($id, $perihal, $awal_cuti, $berakhir_cuti)
+    {
+       $this->db->trans_start();
+
+       $this->db->query("INSERT INTO cuti(id_user,perihal,tgl_dikirim,mulai,berakhir) VALUES ('$id','$perihal',NOW(),'$awal_cuti','$berakhir_cuti')");
+       
+
+       $this->db->trans_complete();
+        if($this->db->trans_status()==true)
+            return true;
+        else
+            return false;
+    }
+
 }

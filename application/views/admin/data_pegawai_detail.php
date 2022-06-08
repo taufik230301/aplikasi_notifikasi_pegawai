@@ -7,21 +7,21 @@
 
 <body class="sb-nav-fixed">
 
-    <?php if ($this->session->flashdata('verifikasi')){ ?>
+    <?php if ($this->session->flashdata('input_cuti')){ ?>
     <script>
     swal({
-        title: "Berhasil Ditambahakan!",
-        text: "Data Berhasil Diverifikasi!",
+        title: "Berhasil!",
+        text: "Data Notifikasi Cuti Berhasil Dikirim!",
         icon: "success"
     });
     </script>
     <?php } ?>
 
-    <?php if ($this->session->flashdata('eror_verifikasi')){ ?>
+    <?php if ($this->session->flashdata('eror_input_cuti')){ ?>
     <script>
     swal({
         title: "Eror!",
-        text: "Gagal Verifikasi Data!",
+        text: "Gagal Kirim Data!",
         icon: "error"
     });
     </script>
@@ -148,11 +148,28 @@
                                     </tr>
                                     <tr>
                                         <td>
+                                        <?php 
+                                            $now = time(); // or your date as well
+                                            $your_date = strtotime($akhir_bekerja);
+                                            $datediff = $your_date - $now;
+                                            
+                                            $date = round($datediff / (60 * 60 * 24));
+                                        
+                         
+                                            ?>
+                                            <?php if($mulai_bekerja and $date < 0){?>
                                             <a href="" data-bs-toggle="modal"
                                                 data-bs-target="#notifikasi_cuti<?=$id_user?>"
                                                 class="btn btn-primary">Kirim Notifikasi Cuti <i
                                                     class="fas fa-paper-plane"></i>
                                             </a>
+                                            <?php } elseif($mulai_bekerja == NULL) {?>
+                                                <button type="button" class="btn btn-danger">Belum Di Set</button>
+                                            
+                                            <?php } else {?>
+                                                <button type="button" class="btn btn-danger">Belum Butuh Cuti</button>
+                                            <?php } ?>
+
                                         </td>
                                         <td></td>
                                         <td style="text-align: right;"> <a href="" data-bs-toggle="modal"
@@ -175,19 +192,124 @@
                                                         aria-label="Close"></button>
                                                 </div>
                                                 <div class="modal-body">
-                                                    <form action="<?=base_url();?>Pegawai/edit_pegawai"
-                                                        method="POST">
+                                                    <form action="<?=base_url();?>Pegawai/edit_pegawai" method="POST">
                                                         <input type="text" value="<?=$id_user?>" name="id_user" hidden>
                                                         <div class="mb-3">
                                                             <label for="nama" class="form-label">Nama</label>
-                                                            <input type="email" class="form-control"
-                                                                id="nama">
+                                                            <input type="text" class="form-control" id="nama"
+                                                                name="nama" value="<?=$nama_lengkap?>">
                                                         </div>
                                                         <div class="mb-3">
-                                                            <label for="exampleInputPassword1"
-                                                                class="form-label">Password</label>
-                                                            <input type="password" class="form-control"
-                                                                id="exampleInputPassword1">
+                                                            <label for="email" class="form-label">Email</label>
+                                                            <input type="email" class="form-control" id="email"
+                                                                name="email" value="<?=$email?>">
+                                                        </div>
+                                                        <div class="mb-3">
+                                                            <label for="jabatan" class="form-label">Jabatan</label>
+                                                            <select class="form-select"
+                                                                aria-label="Default select example" name="jabatan">
+                                                                <option value="Supply Chain Management">Supply Chain
+                                                                    Management</option>
+                                                                <option value="Site It Support">Site It Support</option>
+                                                                <option value="Site Human Resource & General Affair">
+                                                                    Site Human Resource & General
+                                                                    Affair</option>
+                                                                <option value="Site Finance & Accounting">Site Finance &
+                                                                    Accounting </option>
+                                                                <option value="Reporting & Gov. Relation">Reporting &
+                                                                    Gov. Relation</option>
+
+                                                                <option value="Plant Maintenance">Plant Maintenance
+                                                                </option>
+                                                                <option value="Mine Operation">Mine Operation</option>
+                                                                <option value="Mine Engineering ">Mine Engineering
+                                                                </option>
+                                                                <option value="Management Operation">Management
+                                                                    Operation</option>
+                                                                <option value="Health Safety Security Environment ">
+                                                                    Health Safety Security
+                                                                    Environment </option>
+                                                                <option value="External Relation, Csr & Security">
+                                                                    External Relation, Csr & Security
+                                                                </option>
+                                                                <option value="Civil Project Lahat">Civil Project Lahat
+                                                                </option>
+
+                                                            </select>
+                                                        </div>
+                                                        <div class="mb-3">
+                                                            <label for="title_posisi" class="form-label">Title
+                                                                Posisi</label>
+                                                            <input type="text" class="form-control" id="title_posisi"
+                                                                name="title_posisi" value="<?=$title_posisi?>">
+                                                        </div>
+                                                        <div class="mb-3">
+                                                            <label for="jenis_kelamin" class="form-label">Jenis
+                                                                Kelamin</label>
+                                                            <select class="form-select"
+                                                                aria-label="Default select example"
+                                                                name="jenis_kelamin">
+                                                                <option value="L">L</option>
+                                                                <option value="P">P</option>
+                                                            </select>
+                                                        </div>
+                                                        <div class="mb-3">
+                                                            <label for="no_telp" class="form-label">Nomor HP</label>
+                                                            <input type="text" class="form-control" id="no_telp"
+                                                                name="no_telp" value="<?=$no_telp?>">
+                                                        </div>
+                                                        <div class="mb-3">
+                                                            <label for="alamat" class="form-label">Alamat</label>
+                                                            <textarea class="form-control"
+                                                                placeholder="Leave a comment here"
+                                                                id="floatingTextarea2" style="height: 100px"
+                                                                name="alamat"><?=$alamat?></textarea>
+                                                        </div>
+                                                        <div class="modal-footer">
+                                                            <button type="submit"
+                                                                class="btn btn-primary">Submit</button>
+                                                            <button type="button" class="btn btn-secondary"
+                                                                data-bs-dismiss="modal">Close</button>
+                                                        </div>
+                                                    </form>
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </div>
+                                    <div class="modal fade" id="notifikasi_cuti<?=$id_user?>" tabindex="-1"
+                                        aria-labelledby="exampleModalLabel" aria-hidden="true">
+                                        <div class="modal-dialog">
+                                            <div class="modal-content">
+                                                <div class="modal-header">
+                                                    <h5 class="modal-title" id="exampleModalLabel">Kirim Notifkasi Cuti
+                                                    </h5>
+                                                    <button type="button" class="btn-close" data-bs-dismiss="modal"
+                                                        aria-label="Close"></button>
+                                                </div>
+                                                <div class="modal-body">
+                                                    <form action="<?=base_url();?>Pegawai/notifikasi_cuti"
+                                                        method="POST">
+                                                        <input type="text" value="<?=$id_user?>" name="id_user" hidden>
+                                                        <input type="text" value="<?=$mulai_bekerja?>"
+                                                            name="mulai_bekerja" hidden>
+                                                        <input type="text" value="<?=$akhir_bekerja?>"
+                                                            name="akhir_bekerja" hidden>
+                                                        <p>Apakah kamu ingin mengirim notifikasi cuti kepada karyawan
+                                                            ini?</i></b></p>
+                                                        <div class="mb-3">
+                                                            <label for="awal_cuti" class="form-label">Awal Cuti</label>
+                                                            <input type="date" class="form-control" id="awal_cuti"
+                                                                name="awal_cuti">
+                                                        </div>
+                                                        <div class="mb-3">
+                                                            <label for="berakhir_cuti" class="form-label">Berakhir Cuti</label>
+                                                            <input type="date" class="form-control" id="berakhir_cuti"
+                                                                name="berakhir_cuti">
+                                                        </div>
+                                                        <div class="mb-3">
+                                                            <label for="perihal" class="form-label">Perihal Cuti</label>
+                                                            <input type="text" class="form-control" id="perihal"
+                                                                name="perihal">
                                                         </div>
                                                         <div class="mb-3">
                                                             <label for="alamat" class="form-label">Pesan
