@@ -3,6 +3,12 @@ defined('BASEPATH') OR exit('No direct script access allowed');
 
 class Lengkapi_Data extends CI_Controller {
 
+	public function __construct()
+	{
+		parent::__construct();
+        $this->load->model('m_user');
+	}
+
 	public function view_pegawai()
 	{
 
@@ -25,10 +31,11 @@ class Lengkapi_Data extends CI_Controller {
 
 		$nama_lengkap = $this->input->post('nama_lengkap');
 		$jabatan = $this->input->post('jabatan');
+		$title_posisi = $this->input->post('title_posisi');
 		$jenis_kelamin = $this->input->post('jenis_kelamin');
 		$no_telp = $this->input->post('no_telp');
 		$alamat = $this->input->post('alamat');
-		$id = $this->session->userdata('username');
+		$id = $this->session->userdata('id_user');
 
 		// echo var_dump($nama_lengkap);
 		// echo var_dump($jabatan);
@@ -38,7 +45,7 @@ class Lengkapi_Data extends CI_Controller {
 		
 		// die();
 
-			$hasil = $this->m_user->update_user_detail($id, $username, $email, $pass, $id_user_level, $id_status_verifikasi, $id_status_aktif, $id_status_perpanjangan);
+			$hasil = $this->m_user->update_user_detail($nama_lengkap, $jabatan, $title_posisi ,$jenis_kelamin, $no_telp, $alamat, $id);
 
 			if($hasil==false){
                 $this->session->set_flashdata('eror_input','eror_input');

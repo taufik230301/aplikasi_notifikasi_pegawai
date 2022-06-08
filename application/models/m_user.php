@@ -3,6 +3,14 @@
 class M_user extends CI_Model
 {
 
+    public function read_all_data_user()
+    {
+        
+        $hasil=$this->db->query("SELECT * FROM user JOIN user_detail ON user.id_user_detail = user_detail.id_user_detail WHERE id_user_level=3");
+        return $hasil->result_array();
+        
+    }
+
     public function pendaftaran_user($id, $username, $email, $password, $id_user_level, $id_status_verifikasi)
     {
        $this->db->trans_start();
@@ -23,6 +31,32 @@ class M_user extends CI_Model
         $hasil=$this->db->query("SELECT * FROM user JOIN user_detail ON user.id_user_detail = user_detail.id_user_detail WHERE username='$username'");
         return $hasil;
         
+    }
+
+    public function update_user_detail($nama_lengkap, $jabatan, $title_posisi ,$jenis_kelamin, $no_telp, $alamat, $id)
+    {
+       $this->db->trans_start();
+
+       $this->db->query("UPDATE user_detail SET nama_lengkap='$nama_lengkap', jabatan='$jabatan', title_posisi='$title_posisi', jenis_kelamin='$jenis_kelamin', no_telp='$no_telp', alamat='$alamat' WHERE id_user_detail='$id'");
+
+       $this->db->trans_complete();
+        if($this->db->trans_status()==true)
+            return true;
+        else
+            return false;
+    }
+
+    public function update_id_status_verifikasi($id_status_verifikasi, $id)
+    {
+       $this->db->trans_start();
+
+       $this->db->query("UPDATE user_detail SET id_status_verifikasi='$id_status_verifikasi' WHERE id_user_detail='$id'");
+
+       $this->db->trans_complete();
+        if($this->db->trans_status()==true)
+            return true;
+        else
+            return false;
     }
     
 }

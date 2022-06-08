@@ -6,6 +6,27 @@
 </head>
 
 <body class="sb-nav-fixed">
+
+    <?php if ($this->session->flashdata('input')){ ?>
+    <script>
+    swal({
+        title: "Berhasil Ditambahakan!",
+        text: "Data Berhasil Ditambahkan!",
+        icon: "success"
+    });
+    </script>
+    <?php } ?>
+
+    <?php if ($this->session->flashdata('eror_input')){ ?>
+    <script>
+    swal({
+        title: "Eror!",
+        text: "Gagal Menambahkan Data!",
+        icon: "error"
+    });
+    </script>
+    <?php } ?>
+
     <?php $this->load->view("pegawai/components/navbar.php") ?>
     <div id="layoutSidenav">
         <?php $this->load->view("pegawai/components/sidebar.php") ?>
@@ -43,6 +64,10 @@
                                     <option value="Civil Project Lahat">Civil Project Lahat</option>
 
                                 </select>
+                            </div>
+                            <div class="mb-3">
+                                <label for="title_posisi" class="form-label">Title Posisi</label>
+                                <input type="text" class="form-control" id="title_posisi" name="title_posisi">
                             </div>
                             <div class="mb-3">
                                 <label for="jenis_kelamin" class="form-label">Jenis Kelamin</label>

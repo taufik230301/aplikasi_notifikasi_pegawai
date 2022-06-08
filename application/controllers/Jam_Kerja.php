@@ -3,11 +3,24 @@ defined('BASEPATH') OR exit('No direct script access allowed');
 
 class Jam_Kerja extends CI_Controller {
 
+	public function __construct()
+	{
+		parent::__construct();
+		$this->load->model('m_jam_kerja');
+		$this->load->model('m_user');
+	}
+
 	public function view_admin()
 	{
 		if ($this->session->userdata('logged_in') == true AND $this->session->userdata('id_user_level') == 1) {
 
-		$this->load->view('admin/jam_kerja');
+			$data['user'] = $this->m_user->read_all_data_user();
+			// $data['jam_kerja'] = $this->m_jam_kerja->read_all_data_jam_kerja();
+			// echo var_dump($data);
+			// die();
+
+		$this->load->view('admin/jam_kerja', $data);
+		
 
 		}else{
 
