@@ -20,6 +20,27 @@ class Jam_Kerja extends CI_Controller {
 			// die();
 
 		$this->load->view('admin/jam_kerja', $data);
+
+
+		}else{
+
+			$this->session->set_flashdata('loggin_no_session','loggin_no_session');
+			redirect('Login/index');
+
+		}
+		
+	}
+	
+	public function detail_jam_kerja($id_user)
+	{
+		if ($this->session->userdata('logged_in') == true AND $this->session->userdata('id_user_level') == 1) {
+
+			
+		$data['jam_kerja'] = $this->m_jam_kerja->read_all_data_jam_kerja_by_id($id_user);
+		
+			
+
+		$this->load->view('admin/jam_kerja_detail', $data);
 		
 
 		}else{

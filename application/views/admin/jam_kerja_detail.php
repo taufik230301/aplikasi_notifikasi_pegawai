@@ -20,37 +20,36 @@
                     <div class="card mb-4">
                         <div class="card-header">
                             <i class="fas fa-table me-1"></i>
-                            Data Jam Kerja
+                            Data Jam Kerja <?=$jam_kerja[0]['nama_lengkap']?>
                         </div>
                         <div class="card-body">
                             <table id="datatablesSimple">
                                 <thead>
                                     <tr>
                                         <th>No</th>
-                                        <th>Nama</th>
-                                        <th>Jabatan</th>
-                                        <th>Lihat Jam Kerja</th>
+                                        <th>Mulai Bekerja</th>
+                                        <th>Akhir Bekerja</th>
+                                        <th>Hari</th>
                                     </tr>
                                 </thead>
                                 <tbody>
                                     <?php
                                             $id = 0;
-                                            foreach($user as $i)
+                                            foreach($jam_kerja as $i)
                                             :
                                             $id++;
                                             $id_user = $i['id_user'];
                                             $nama_lengkap = $i['nama_lengkap'];
-                                            $jabatan = $i['jabatan'];
+                                            $jam_kerja_start = $i['jam_kerja_start'];
+                                            $jam_kerja_end = $i['jam_kerja_end'];
+                                            $hari = $i['hari'];
                                     ?>
                                     <tr>
                                         <td><?=$id?></td>
-                                        <td><?=$nama_lengkap?></td>
-                                        <td><?=$jabatan?></td>
-                                        <td>
-                                            <center> <a href="<?=base_url();?>Jam_Kerja/detail_jam_kerja/<?=$id_user?>"
-                                                    type="button" class="btn btn-danger"><i class="fas fa-eye"></i></a>
-                                            </center>
-                                        </td>
+                                        <td><?=$jam_kerja_start?></td>
+                                        <td><?=$jam_kerja_end?></td>
+                                        <td><?=$hari?></td>
+                                        
                                     </tr>
                                     <?php endforeach;?>
                                 </tbody>
@@ -59,7 +58,6 @@
                     </div>
                 </div>
             </main>
-
         </div>
     </div>
     <?php $this->load->view("admin/components/js.php") ?>

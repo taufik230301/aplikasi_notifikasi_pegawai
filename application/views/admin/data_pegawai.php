@@ -68,7 +68,7 @@
                                             :
                                             $id++;
                                             $id_user = $i['id_user'];
-                                            $username = $i['username'];
+                                            $nama_lengkap = $i['nama_lengkap'];
                                             $email = $i['email'];
                                             $jabatan = $i['jabatan'];
                                             $title_posisi = $i['title_posisi'];
@@ -81,7 +81,7 @@
                                     ?>
                                     <tr>
                                         <td><?=$id?></td>
-                                        <td><?=$username?></td>
+                                        <td><?=$nama_lengkap?></td>
                                         <td><?=$email?></td>
                                         <td><?=$jabatan?></td>
                                         <td><?=$title_posisi?></td>
