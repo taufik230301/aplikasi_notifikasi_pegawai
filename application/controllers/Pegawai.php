@@ -23,6 +23,23 @@ class Pegawai extends CI_Controller {
 			redirect('Login/index');
 
 		}
+	}
+	
+	public function detail_pegawai($id_user)
+	{
+		if ($this->session->userdata('logged_in') == true AND $this->session->userdata('id_user_level') == 1) {
+
+		$data['user'] = $this->m_user->read_all_data_user_by_id($id_user);
+	
+
+		$this->load->view('admin/data_pegawai_detail', $data);
+
+		}else{
+
+			$this->session->set_flashdata('loggin_no_session','loggin_no_session');
+			redirect('Login/index');
+
+		}
     }
     
     public function view_hrd()

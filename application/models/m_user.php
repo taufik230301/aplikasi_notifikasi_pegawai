@@ -11,6 +11,12 @@ class M_user extends CI_Model
         
     }
 
+    public function read_all_data_user_by_id($id_user)
+    {
+        $hasil=$this->db->query("SELECT * FROM user JOIN user_detail ON user.id_user_detail = user_detail.id_user_detail WHERE id_user_level=3 AND user.id_user='$id_user'");
+        return $hasil->result_array();
+    }
+
     public function pendaftaran_user($id, $username, $email, $password, $id_user_level, $id_status_verifikasi)
     {
        $this->db->trans_start();

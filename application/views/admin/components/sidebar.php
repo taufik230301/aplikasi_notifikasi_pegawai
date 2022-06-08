@@ -18,7 +18,7 @@
                 </a>
                 <a class="nav-link" href="<?=base_url();?>Cuti/view_admin">
                     <div class="sb-nav-link-icon"><i class="fas fa-table"></i></div>
-                    Cuti
+                    Riwayat Cuti
                 </a>
             </div>
         </div>

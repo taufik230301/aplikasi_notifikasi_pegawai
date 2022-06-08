@@ -50,11 +50,6 @@
                                         <th>No</th>
                                         <th>Nama Lengkap</th>
                                         <th>Email</th>
-                                        <th>Jabatan</th>
-                                        <th>Title Posisi</th>
-                                        <th>Jenis Kelamin</th>
-                                        <th>No Telepon</th>
-                                        <th>Alamat</th>
                                         <th>Mulai Bekerja</th>
                                         <th>Akhir Bekerja</th>
                                         <th>Status Verifikasi</th>
@@ -71,10 +66,7 @@
                                             $nama_lengkap = $i['nama_lengkap'];
                                             $email = $i['email'];
                                             $jabatan = $i['jabatan'];
-                                            $title_posisi = $i['title_posisi'];
-                                            $jenis_kelamin = $i['jenis_kelamin'];
-                                            $no_telp = $i['no_telp'];
-                                            $alamat = $i['alamat'];
+                                           
                                             $mulai_bekerja = $i['mulai_bekerja'];
                                             $akhir_bekerja = $i['akhir_bekerja'];
                                             $id_status_verifikasi = $i['id_status_verifikasi'];
@@ -83,11 +75,7 @@
                                         <td><?=$id?></td>
                                         <td><?=$nama_lengkap?></td>
                                         <td><?=$email?></td>
-                                        <td><?=$jabatan?></td>
-                                        <td><?=$title_posisi?></td>
-                                        <td><?=$jenis_kelamin?></td>
-                                        <td><?=$no_telp?></td>
-                                        <td><?=$alamat?></td>
+                                        
                                         <td><?php  if($mulai_bekerja == NULL){?>
                                             <button type="button" class="btn btn-danger">Belum di isi</button>
                                             <?php }else {?>
@@ -118,17 +106,8 @@
                                             </div>
                                             <div class="table-responsive">
                                                 <div class="table table-striped table-hover ">
-                                                    <a href="" class="btn btn-primary" data-bs-toggle="modal"
-                                                        data-bs-target="#exampleModal">
-                                                        Edit <i class="nav-icon fas fa-edit"></i>
-                                                    </a>
-
-                                                </div>
-                                            </div>
-                                            <div class="table-responsive">
-                                                <div class="table table-striped table-hover ">
-                                                    <a href="" data-bs-toggle="modal" data-bs-target="#exampleModal"
-                                                        class="btn btn-danger">Hapus <i class="fas fa-trash"></i>
+                                                    <a href="<?=base_url();?>Pegawai/detail_pegawai/<?=$id_user?>" class="btn btn-primary">
+                                                        Detail <i class="fas fa-eye"></i>
                                                     </a>
                                                 </div>
                                             </div>
