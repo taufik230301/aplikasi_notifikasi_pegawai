@@ -3,11 +3,18 @@ defined('BASEPATH') OR exit('No direct script access allowed');
 
 class Cuti extends CI_Controller {
 
+	public function __construct()
+	{
+		parent::__construct();
+		$this->load->model('m_cuti');
+	}
+
 	public function view_admin()
 	{
 		if ($this->session->userdata('logged_in') == true AND $this->session->userdata('id_user_level') == 1) {
 
-		$this->load->view('admin/cuti');
+		$data['cuti'] = $this->m_cuti->read_all_data_cuti();
+		$this->load->view('admin/cuti', $data);
 
 		}else{
 

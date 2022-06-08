@@ -35,17 +35,49 @@
                                         <th>Aksi</th>
                                     </tr>
                                 </thead>
-                               
+
                                 <tbody>
+                                    <?php
+                                            $id = 0;
+                                            foreach($cuti as $i)
+                                            :
+                                            $id++;
+                                            $id_cuti = $i['id_cuti'];
+                                            $id_user = $i['id_user'];
+                                            $nama_lengkap = $i['nama_lengkap'];
+                                            $perihal = $i['perihal'];
+                                            $tgl_dikirim = $i['tgl_dikirim'];
+                                            $mulai = $i['mulai'];
+                                            $berakhir = $i['berakhir'];
+                                    ?>
                                     <tr>
-                                        <td>Tiger Nixon</td>
-                                        <td>System Architect</td>
-                                        <td>Edinburgh</td>
-                                        <td>61</td>
-                                        <td>2011/04/25</td>
-                                        <td>$320,800</td>
-                                        <td>$320,800</td>
+                                        <td><?=$id?></td>
+                                        <td><?=$nama_lengkap?></td>
+                                        <td><?=$perihal?></td>
+                                        <td><?=$tgl_dikirim?></td>
+                                        <td><?=$mulai?></td>
+                                        <td><?=$berakhir?></td>
+                                        <td>
+                                            <div class="table-responsive">
+                                                <div class="table table-striped table-hover ">
+                                                    <a href="" class="btn btn-primary" data-bs-toggle="modal"
+                                                        data-bs-target="#exampleModal">
+                                                        Edit <i class="nav-icon fas fa-edit"></i>
+                                                    </a>
+
+                                                </div>
+                                            </div>
+                                            <div class="table-responsive">
+                                                <div class="table table-striped table-hover ">
+                                                    <a href="" data-bs-toggle="modal" data-bs-target="#exampleModal"
+                                                        class="btn btn-danger">Hapus <i class="fas fa-trash"></i>
+                                                    </a>
+                                                </div>
+                                            </div>
+                                        </td>
                                     </tr>
+
+                                    <?php endforeach;?>
                                 </tbody>
                             </table>
                         </div>
