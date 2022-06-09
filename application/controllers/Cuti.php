@@ -28,7 +28,8 @@ class Cuti extends CI_Controller {
 	{
 		if ($this->session->userdata('logged_in') == true AND $this->session->userdata('id_user_level') == 2) {
 
-		$this->load->view('hrd/cuti');
+		$data['cuti'] = $this->m_cuti->read_all_data_cuti();
+		$this->load->view('hrd/cuti', $data);
 
 	}else{
 
