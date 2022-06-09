@@ -12,7 +12,7 @@
                         <i class="fas fa-clock"></i></div>
                     Jam Kerja
                 </a>
-                <a class="nav-link" href="<?=base_url();?>Cuti/view_pegawai">
+                <a class="nav-link" href="<?=base_url();?>Cuti/view_pegawai/<?=$this->session->userdata('id_user');?>">
                     <div class="sb-nav-link-icon"><i class="fas fa-users"></i></div>
                     Cuti
                 </a>
