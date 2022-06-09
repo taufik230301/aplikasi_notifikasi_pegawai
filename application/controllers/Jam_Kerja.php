@@ -30,6 +30,26 @@ class Jam_Kerja extends CI_Controller {
 		}
 		
 	}
+
+	public function tambah_jam_kerja()
+	{
+		$id = $this->input->post('id_user');
+		$jam_kerja_start = $this->input->post('jam_kerja_start');
+		$jam_kerja_end = $this->input->post('jam_kerja_end');
+		$id_hari = $this->input->post('id_hari');
+
+			$hasil = $this->m_jam_kerja->tambah_jam_kerja($jam_kerja_start, $jam_kerja_end, $id_hari ,$id);
+
+			if($hasil==false){
+                $this->session->set_flashdata('eror_input','eror_input');
+                redirect('Jam_Kerja/detail_jam_kerja/'.$id);
+			}else{
+				$this->session->set_flashdata('input','input');
+				redirect('/Jam_Kerja/detail_jam_kerja/'.$id);
+			}
+		
+
+	}
 	
 	public function detail_jam_kerja($id_user)
 	{
@@ -37,6 +57,7 @@ class Jam_Kerja extends CI_Controller {
 
 			
 		$data['jam_kerja'] = $this->m_jam_kerja->read_all_data_jam_kerja_by_id($id_user);
+		$data['id_user_pegawai'] = $id_user;
 
 		// echo var_dump($data['jam_kerja']);
 		// die();

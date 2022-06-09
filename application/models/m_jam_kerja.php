@@ -13,4 +13,19 @@ class M_jam_kerja extends CI_Model
         return $hasil->result_array();
     }
 
+    public function tambah_jam_kerja($jam_kerja_start, $jam_kerja_end, $id_hari ,$id)
+    {
+
+        $this->db->trans_start();
+
+       $this->db->query("INSERT INTO jam_kerja(jam_kerja_start,jam_kerja_end,id_hari,id_user) VALUES ('$jam_kerja_start','$jam_kerja_end','$id_hari','$id')");
+       
+
+       $this->db->trans_complete();
+        if($this->db->trans_status()==true)
+            return true;
+        else
+            return false;
+    }
+
 }

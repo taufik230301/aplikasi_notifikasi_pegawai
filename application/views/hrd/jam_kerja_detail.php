@@ -35,8 +35,8 @@
                                 <thead>
                                     <tr>
                                         <th>No</th>
-                                        <th>Mulai Bekerja</th>
-                                        <th>Akhir Bekerja</th>
+                                        <th>Jam Mulai Bekerja</th>
+                                        <th>Jam Akhir Bekerja</th>
                                         <th>Hari</th>
 
                                     </tr>
