@@ -26,8 +26,42 @@ class Pegawai extends CI_Controller {
 
 		}
 	}
+
+	public function edit_pegawai_admin()
+	{
+		$id = $this->input->post('id_user');
+		$nama_lengkap = $this->input->post('nama_lengkap');
+		$username = $this->input->post('username');
+		$email = $this->input->post('email');
+		$jabatan = $this->input->post('jabatan');
+		$title_posisi = $this->input->post('title_posisi');
+		$jenis_kelamin = $this->input->post('jenis_kelamin');
+		$no_telp = $this->input->post('no_telp');
+		$alamat = $this->input->post('alamat');
+
+		// echo var_dump($nama_lengkap);
+		// echo var_dump($username);
+		// echo var_dump($email);
+		// echo var_dump($jabatan);
+		// echo var_dump($title_posisi);
+		// echo var_dump($jenis_kelamin);
+		// echo var_dump($no_telp);
+		// echo var_dump($alamat);
+		// die();
+
+			$hasil = $this->m_user->update_user($nama_lengkap, $username, $email ,$jabatan, $title_posisi ,$jenis_kelamin, $no_telp, $alamat, $id);
+
+			if($hasil==false){
+                $this->session->set_flashdata('eror_edit','eror_edit');
+                redirect('Pegawai/detail_pegawai_admin/'.$id);
+			}else{
+				$this->session->set_flashdata('edit','edit');
+				redirect('Pegawai/detail_pegawai_admin/'.$id);
+			}
+
+	}
 	
-	public function detail_pegawai($id_user)
+	public function detail_pegawai_admin($id_user)
 	{
 		if ($this->session->userdata('logged_in') == true AND $this->session->userdata('id_user_level') == 1) {
 
@@ -105,10 +139,10 @@ class Pegawai extends CI_Controller {
 
 			if($hasil_1 AND $hasil_2==false){
                 $this->session->set_flashdata('eror_input_cuti','eror_input_cuti');
-                redirect('Pegawai/detail_pegawai/'.$id);
+                redirect('Pegawai/detail_pegawai_admin/'.$id);
 			}else{
 				$this->session->set_flashdata('input_cuti','input_cuti');
-				redirect('Pegawai/detail_pegawai/'.$id);
+				redirect('Pegawai/detail_pegawai_admin/'.$id);
 			}
 		
 

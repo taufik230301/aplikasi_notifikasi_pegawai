@@ -27,6 +27,26 @@
     </script>
     <?php } ?>
 
+    <?php if ($this->session->flashdata('edit')){ ?>
+    <script>
+    swal({
+        title: "Berhasil!",
+        text: "Data Berhasil Diedit!",
+        icon: "success"
+    });
+    </script>
+    <?php } ?>
+
+    <?php if ($this->session->flashdata('eror_edit')){ ?>
+    <script>
+    swal({
+        title: "Eror!",
+        text: "Data Gagal Diedit!",
+        icon: "error"
+    });
+    </script>
+    <?php } ?>
+
     <?php $this->load->view("admin/components/navbar.php") ?>
     <div id="layoutSidenav">
         <?php $this->load->view("admin/components/sidebar.php") ?>
@@ -59,6 +79,7 @@
                                             $id++;
                                             $id_user = $i['id_user'];
                                             $nama_lengkap = $i['nama_lengkap'];
+                                            $username = $i['username'];
                                             $email = $i['email'];
                                             $jabatan = $i['jabatan'];
                                             $title_posisi = $i['title_posisi'];
@@ -192,12 +213,17 @@
                                                         aria-label="Close"></button>
                                                 </div>
                                                 <div class="modal-body">
-                                                    <form action="<?=base_url();?>Pegawai/edit_pegawai" method="POST">
+                                                    <form action="<?=base_url();?>Pegawai/edit_pegawai_admin" method="POST">
                                                         <input type="text" value="<?=$id_user?>" name="id_user" hidden>
                                                         <div class="mb-3">
-                                                            <label for="nama" class="form-label">Nama</label>
-                                                            <input type="text" class="form-control" id="nama"
-                                                                name="nama" value="<?=$nama_lengkap?>">
+                                                            <label for="nama_lengkap" class="form-label">Nama Lengkap</label>
+                                                            <input type="text" class="form-control" id="nama_lengkap"
+                                                                name="nama_lengkap" value="<?=$nama_lengkap?>">
+                                                        </div>
+                                                        <div class="mb-3">
+                                                            <label for="username" class="form-label">Username</label>
+                                                            <input type="text" class="form-control" id="username"
+                                                                name="username" value="<?=$username?>">
                                                         </div>
                                                         <div class="mb-3">
                                                             <label for="email" class="form-label">Email</label>

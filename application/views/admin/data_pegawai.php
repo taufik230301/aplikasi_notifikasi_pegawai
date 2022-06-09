@@ -129,7 +129,7 @@
                                             </div>
                                             <div class="table-responsive">
                                                 <div class="table table-striped table-hover ">
-                                                    <a href="<?=base_url();?>Pegawai/detail_pegawai/<?=$id_user?>"
+                                                    <a href="<?=base_url();?>Pegawai/detail_pegawai_admin/<?=$id_user?>"
                                                         class="btn btn-primary">
                                                         Detail <i class="fas fa-eye"></i>
                                                     </a>
