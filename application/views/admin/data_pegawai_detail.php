@@ -169,7 +169,7 @@
                                     </tr>
                                     <tr>
                                         <td>
-                                        <?php 
+                                            <?php 
                                             $now = time(); // or your date as well
                                             $your_date = strtotime($akhir_bekerja);
                                             $datediff = $your_date - $now;
@@ -185,10 +185,10 @@
                                                     class="fas fa-paper-plane"></i>
                                             </a>
                                             <?php } elseif($mulai_bekerja == NULL) {?>
-                                                <button type="button" class="btn btn-danger">Belum Di Set</button>
-                                            
+                                            <button type="button" class="btn btn-danger">Belum Di Set</button>
+
                                             <?php } else {?>
-                                                <button type="button" class="btn btn-danger">Belum Butuh Cuti</button>
+                                            <button type="button" class="btn btn-danger">Belum Butuh Cuti</button>
                                             <?php } ?>
 
                                         </td>
@@ -197,8 +197,7 @@
                                                 data-bs-target="#edit<?=$id_user?>" class="btn btn-primary">Edit <i
                                                     class="fas fa-edit"></i>
                                             </a>
-                                            <a href="" data-bs-toggle="modal"
-                                                data-bs-target="#notifikasi_cuti<?=$id_user?>"
+                                            <a href="" data-bs-toggle="modal" data-bs-target="#hapus<?=$id_user?>"
                                                 class="btn btn-danger">Hapus <i class="fas fa-trash"></i>
                                             </a></td>
                                     </tr>
@@ -213,10 +212,12 @@
                                                         aria-label="Close"></button>
                                                 </div>
                                                 <div class="modal-body">
-                                                    <form action="<?=base_url();?>Pegawai/edit_pegawai_admin" method="POST">
+                                                    <form action="<?=base_url();?>Pegawai/edit_pegawai_admin"
+                                                        method="POST">
                                                         <input type="text" value="<?=$id_user?>" name="id_user" hidden>
                                                         <div class="mb-3">
-                                                            <label for="nama_lengkap" class="form-label">Nama Lengkap</label>
+                                                            <label for="nama_lengkap" class="form-label">Nama
+                                                                Lengkap</label>
                                                             <input type="text" class="form-control" id="nama_lengkap"
                                                                 name="nama_lengkap" value="<?=$nama_lengkap?>">
                                                         </div>
@@ -291,6 +292,18 @@
                                                                 id="floatingTextarea2" style="height: 100px"
                                                                 name="alamat"><?=$alamat?></textarea>
                                                         </div>
+                                                        <div class="mb-3">
+                                                            <label for="mulai_bekerja" class="form-label">Mulai
+                                                                Bekerja</label>
+                                                            <input type="date" class="form-control" id="mulai_bekerja"
+                                                                name="mulai_bekerja" value="<?=$mulai_bekerja?>">
+                                                        </div>
+                                                        <div class="mb-3">
+                                                            <label for="akhir_bekerja" class="form-label">Akhir
+                                                                Bekerja</label>
+                                                            <input type="date" class="form-control" id="akhir_bekerja"
+                                                                name="akhir_bekerja" value="<?=$akhir_bekerja?>">
+                                                        </div>
                                                         <div class="modal-footer">
                                                             <button type="submit"
                                                                 class="btn btn-primary">Submit</button>
@@ -328,7 +341,8 @@
                                                                 name="awal_cuti">
                                                         </div>
                                                         <div class="mb-3">
-                                                            <label for="berakhir_cuti" class="form-label">Berakhir Cuti</label>
+                                                            <label for="berakhir_cuti" class="form-label">Berakhir
+                                                                Cuti</label>
                                                             <input type="date" class="form-control" id="berakhir_cuti"
                                                                 name="berakhir_cuti">
                                                         </div>
@@ -349,6 +363,34 @@
                                                             <button type="submit"
                                                                 class="btn btn-primary">Submit</button>
                                                             <button type="button" class="btn btn-secondary"
+                                                                data-bs-dismiss="modal">Close</button>
+                                                        </div>
+                                                    </form>
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </div>
+                                    <div class="modal fade" id="hapus<?=$id_user?>" tabindex="-1"
+                                        aria-labelledby="exampleModalLabel" aria-hidden="true">
+                                        <div class="modal-dialog">
+                                            <div class="modal-content">
+                                                <div class="modal-header">
+                                                    <h5 class="modal-title" id="exampleModalLabel">Hapus Data Pegawai
+                                                    </h5>
+                                                    <button type="button" class="btn-close" data-bs-dismiss="modal"
+                                                        aria-label="Close"></button>
+                                                </div>
+                                                <div class="modal-body">
+                                                    <form action="<?=base_url();?>Pegawai/hapus_pegawai_admin"
+                                                        method="POST">
+                                                        <input type="text" value="<?=$id_user?>" name="id_user" hidden>
+
+                                                        <p>Apakah kamu ingin mengirim notifikasi cuti kepada karyawan
+                                                            ini?</i></b></p>
+
+                                                        <div class="modal-footer">
+                                                            <button type="submit" class="btn btn-danger">Submit</button>
+                                                            <button type="button" class="btn btn-success"
                                                                 data-bs-dismiss="modal">Close</button>
                                                         </div>
                                                     </form>

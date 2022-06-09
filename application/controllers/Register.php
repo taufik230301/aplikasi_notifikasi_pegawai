@@ -22,7 +22,8 @@ class Register extends CI_Controller {
 		$re_password = $this->input->post('re_password');
 		$id_user_level = 3;
 		$id_status_verifikasi = 1;
-		$id = md5($username.$password.$id_user_level);
+		$random_num = rand(1, 9999);
+		$id = md5($username.$password.$id_user_level.$random_num);
 		// echo var_dump($username);
 		// echo var_dump($email);
 		// echo var_dump($password);

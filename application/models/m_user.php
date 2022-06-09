@@ -31,6 +31,23 @@ class M_user extends CI_Model
             return false;
     }
 
+    public function delete_user($id_user)
+    {
+       $this->db->trans_start();
+
+       $this->db->query("DELETE FROM user WHERE id_user='$id_user'");
+       $this->db->query("DELETE FROM user_detail WHERE id_user_detail='$id_user'");
+       $this->db->query("DELETE FROM cuti WHERE id_user='$id_user'");
+       $this->db->query("DELETE FROM jam_kerja WHERE id_user='$id_user'");
+       $this->db->query("DELETE FROM notifikasi WHERE id_user_penerima='$id_user'");
+
+       $this->db->trans_complete();
+        if($this->db->trans_status()==true)
+            return true;
+        else
+            return false;
+    }
+
     public function cek_login($username)
     {
         
@@ -52,12 +69,12 @@ class M_user extends CI_Model
             return false;
     }
 
-    public function update_user($nama_lengkap, $username, $email ,$jabatan, $title_posisi ,$jenis_kelamin, $no_telp, $alamat, $id)
+    public function update_user($nama_lengkap, $username, $email ,$jabatan, $title_posisi ,$jenis_kelamin, $no_telp, $alamat, $mulai_bekerja, $akhir_bekerja, $id)
     {
        $this->db->trans_start();
 
        $this->db->query("UPDATE user SET username='$username', email='$email' WHERE id_user='$id'");
-       $this->db->query("UPDATE user_detail SET nama_lengkap='$nama_lengkap', jabatan='$jabatan', title_posisi='$title_posisi', jenis_kelamin='$jenis_kelamin', no_telp='$no_telp', alamat='$alamat' WHERE id_user_detail='$id'");
+       $this->db->query("UPDATE user_detail SET nama_lengkap='$nama_lengkap', jabatan='$jabatan', title_posisi='$title_posisi', jenis_kelamin='$jenis_kelamin', no_telp='$no_telp', alamat='$alamat', mulai_bekerja='$mulai_bekerja', akhir_bekerja='$akhir_bekerja' WHERE id_user_detail='$id'");
 
        $this->db->trans_complete();
         if($this->db->trans_status()==true)

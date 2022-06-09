@@ -6,7 +6,25 @@
 </head>
 
 <body class="sb-nav-fixed">
+    <?php if ($this->session->flashdata('delete')){ ?>
+    <script>
+    swal({
+        title: "Berhasil Dihapus!",
+        text: "Data Berhasil Ditambahkan!",
+        icon: "success"
+    });
+    </script>
+    <?php } ?>
 
+    <?php if ($this->session->flashdata('eror_delete')){ ?>
+    <script>
+    swal({
+        title: "Eror!",
+        text: "Gagal Menghapus Data!",
+        icon: "error"
+    });
+    </script>
+    <?php } ?>
     <?php if ($this->session->flashdata('verifikasi')){ ?>
     <script>
     swal({
@@ -38,6 +56,10 @@
                         <li class="breadcrumb-item"><a href="index.html">Dashboard</a></li>
                         <li class="breadcrumb-item active">Data Pegawai</li>
                     </ol>
+                    <button type="button" class="btn btn-primary" data-bs-toggle="modal"
+                        data-bs-target="#tambah_pegawai">
+                        Tambah Data
+                    </button>
                     <div class="card mb-4">
                         <div class="card-header">
                             <i class="fas fa-table me-1"></i>
@@ -105,10 +127,10 @@
                                                     class="fas fa-paper-plane"></i>
                                             </a>
                                             <?php } elseif($mulai_bekerja == NULL) {?>
-                                                <button type="button" class="btn btn-danger">Belum Di Set</button>
-                                            
+                                            <button type="button" class="btn btn-danger">Belum Di Set</button>
+
                                             <?php } else {?>
-                                                <button type="button" class="btn btn-danger">Belum Butuh Cuti</button>
+                                            <button type="button" class="btn btn-danger">Belum Butuh Cuti</button>
                                             <?php } ?>
                                         </td>
                                         <td><?php  if($id_status_verifikasi == 1){?>
@@ -180,6 +202,83 @@
                     </div>
                 </div>
             </main>
+            <div class="modal fade" id="tambah_pegawai" tabindex="-1" aria-labelledby="exampleModalLabel"
+                aria-hidden="true">
+                <div class="modal-dialog">
+                    <div class="modal-content">
+                        <div class="modal-header">
+                            <h5 class="modal-title" id="exampleModalLabel">Tambah Data Pegawai</h5>
+                            <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+                        </div>
+                        <div class="modal-body">
+                            <form action="<?=base_url();?>Pegawai/tambah_pegawai" method="POST">
+                                <div class="mb-3">
+                                    <label for="username" class="form-label">Username</label>
+                                    <input type="text" class="form-control" id="username" name="username">
+                                </div>
+                                <div class="mb-3">
+                                    <label for="email" class="form-label">Email</label>
+                                    <input type="email" class="form-control" id="email" name="email">
+                                </div>
+                                <div class="mb-3">
+                                    <label for="password" class="form-label">Password</label>
+                                    <input type="text" class="form-control" id="password" name="password">
+                                </div>
+                                <div class="mb-3">
+                                    <label for="nama_lengkap" class="form-label">Nama Lengkap</label>
+                                    <input type="text" class="form-control" id="nama_lengkap" name="nama_lengkap">
+                                </div>
+                                <div class="mb-3">
+                                    <label for="jabatan" class="form-label">Jabatan</label>
+                                    <select class="form-select" aria-label="Default select example" name="jabatan">
+                                        <option value="Supply Chain Management">Supply Chain Management</option>
+                                        <option value="Site It Support">Site It Support</option>
+                                        <option value="Site Human Resource & General Affair">Site Human Resource &
+                                            General
+                                            Affair</option>
+                                        <option value="Site Finance & Accounting">Site Finance & Accounting </option>
+                                        <option value="Reporting & Gov. Relation">Reporting & Gov. Relation</option>
+
+                                        <option value="Plant Maintenance">Plant Maintenance</option>
+                                        <option value="Mine Operation">Mine Operation</option>
+                                        <option value="Mine Engineering ">Mine Engineering </option>
+                                        <option value="Management Operation">Management Operation</option>
+                                        <option value="Health Safety Security Environment ">Health Safety Security
+                                            Environment </option>
+                                        <option value="External Relation, Csr & Security">External Relation, Csr &
+                                            Security
+                                        </option>
+                                        <option value="Civil Project Lahat">Civil Project Lahat</option>
+
+                                    </select>
+                                </div>
+                                <div class="mb-3">
+                                    <label for="title_posisi" class="form-label">Title Posisi</label>
+                                    <input type="text" class="form-control" id="title_posisi" name="title_posisi">
+                                </div>
+                                <div class="mb-3">
+                                    <label for="jenis_kelamin" class="form-label">Jenis Kelamin</label>
+                                    <select class="form-select" aria-label="Default select example"
+                                        name="jenis_kelamin">
+                                        <option value="L">L</option>
+                                        <option value="P">P</option>
+                                    </select>
+                                </div>
+                                <div class="mb-3">
+                                    <label for="no_telp" class="form-label">Nomor HP</label>
+                                    <input type="text" class="form-control" id="no_telp" name="no_telp">
+                                </div>
+                                <div class="mb-3">
+                                    <label for="alamat" class="form-label">Alamat</label>
+                                    <textarea class="form-control" placeholder="Leave a comment here"
+                                        id="floatingTextarea2" style="height: 100px" name="alamat"></textarea>
+                                </div>
+                                <button type="submit" class="btn btn-primary">Submit</button>
+                            </form>
+                        </div>
+                    </div>
+                </div>
+            </div>
         </div>
 
     </div>
