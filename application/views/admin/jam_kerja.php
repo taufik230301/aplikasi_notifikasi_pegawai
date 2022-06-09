@@ -143,7 +143,7 @@
                                                             ini?</i></b></p>
 
                                                         <div class="mb-3">
-                                                            <label for="alamat" class="form-label">Pesan
+                                                            <label for="pesan" class="form-label">Pesan
                                                                 Notifikasi</label>
                                                             <textarea class="form-control"
                                                                 placeholder="Leave a comment here"

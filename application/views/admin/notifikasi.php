@@ -2,54 +2,59 @@
 <html lang="en">
 
 <head>
-    <?php $this->load->view("hrd/components/header.php") ?>
+    <?php $this->load->view("admin/components/header.php") ?>
 </head>
 
 <body class="sb-nav-fixed">
-    <?php $this->load->view("hrd/components/navbar.php") ?>
+    <?php $this->load->view("admin/components/navbar.php") ?>
     <div id="layoutSidenav">
-        <?php $this->load->view("hrd/components/sidebar.php") ?>
+        <?php $this->load->view("admin/components/sidebar.php") ?>
         <div id="layoutSidenav_content">
             <main>
                 <div class="container-fluid px-4">
-                    <h1 class="mt-4">Jam Kerja</h1>
+                    <h1 class="mt-4">Log Notifikasi</h1>
                     <ol class="breadcrumb mb-4">
                         <li class="breadcrumb-item"><a href="index.html">Dashboard</a></li>
-                        <li class="breadcrumb-item active">Data Jam Kerja</li>
+                        <li class="breadcrumb-item active">Data Log Notifikasi</li>
                     </ol>
                     <div class="card mb-4">
                         <div class="card-header">
                             <i class="fas fa-table me-1"></i>
-                            Data Jam Kerja
+                            Data Log Notifikasi Admin
                         </div>
                         <div class="card-body">
                             <table id="datatablesSimple">
                                 <thead>
                                     <tr>
                                         <th>No</th>
-                                        <th>Nama</th>
-                                        <th>Jabatan</th>
-                                        <th>Lihat Jam Kerja</th>
+                                        <th>User Penerima</th>
+                                        <th>Pesan</th>
+                                        <th>Kategori Notifikasi</th>
+                                        <th>Tanggal Kirim</th>
                                     </tr>
                                 </thead>
+
                                 <tbody>
                                     <?php
                                             $id = 0;
-                                            foreach($user as $i)
+                                            foreach($notifikasi as $i)
                                             :
                                             $id++;
-                                            $id_user = $i['id_user'];
                                             $nama_lengkap = $i['nama_lengkap'];
-                                            $jabatan = $i['jabatan'];
-                                            $updated_jam_kerja = $i['updated_jam_kerja'];
+                                            $pesan = $i['pesan'];
+                                            $kategori_notifikasi = $i['kategori_notifikasi'];
+                                            $date_created = $i['date_created'];
+                                           
                                     ?>
                                     <tr>
                                         <td><?=$id?></td>
-                                        <td>System Architect</td>
-                                        <td>Edinburgh</td>
-                                        <td>61</td>
+                                        <td><?=$nama_lengkap?></td>
+                                        <td><?=$pesan?></td>
+                                        <td><?=$kategori_notifikasi?></td>
+                                        <td><?=$date_created?></td>
                                     </tr>
-                                    <?php endforeach; ?>
+
+                                    <?php endforeach;?>
                                 </tbody>
                             </table>
                         </div>
@@ -70,7 +75,7 @@
             </footer>
         </div>
     </div>
-    <?php $this->load->view("hrd/components/js.php") ?>
+    <?php $this->load->view("admin/components/js.php") ?>
 </body>
 
 </html>

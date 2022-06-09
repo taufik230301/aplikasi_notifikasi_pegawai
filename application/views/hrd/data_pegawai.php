@@ -38,18 +38,49 @@
                                     </tr>
                                 </thead>
                                 <tbody>
+                                    <?php
+                                            $id = 0;
+                                            foreach($user as $i)
+                                            :
+                                            $id++;
+                                            $id_user = $i['id_user'];
+                                            $nama_lengkap = $i['nama_lengkap'];
+                                            $email = $i['email'];
+                                            $jabatan = $i['jabatan'];
+                                            $jenis_kelamin = $i['jenis_kelamin'];
+                                            $no_telp = $i['no_telp'];
+                                            $alamat = $i['alamat'];
+                                            $mulai_bekerja = $i['mulai_bekerja'];
+                                            $akhir_bekerja = $i['akhir_bekerja'];
+                                            $id_status_verifikasi = $i['id_status_verifikasi'];
+                                    ?>
                                     <tr>
-                                        <td>Tiger Nixon</td>
-                                        <td>System Architect</td>
-                                        <td>Edinburgh</td>
-                                        <td>61</td>
-                                        <td>2011/04/25</td>
-                                        <td>$320,800</td>
-                                        <td>2011/04/25</td>
-                                        <td>$320,800</td>
-                                        <td>$320,800</td>
+                                        <td><?=$id?></td>
+                                        <td><?=$nama_lengkap?></td>
+                                        <td><?=$jabatan?></td>
+                                        <td><?=$jenis_kelamin?></td>
+                                        <td><?=$no_telp?></td>
+                                        <td><?=$alamat?></td>
+                                        <td><?php  if($mulai_bekerja == NULL){?>
+                                            <button type="button" class="btn btn-danger">Belum di isi</button>
+                                            <?php }else {?>
+                                            <?=$mulai_bekerja?>
+                                            <?php } ?>
+                                        </td>
+                                        <td><?php  if($akhir_bekerja == NULL){?>
+                                            <button type="button" class="btn btn-danger">Belum di isi</button>
+                                            <?php }else {?>
+                                            <?= $akhir_bekerja?>
+                                            <?php } ?>
+                                        </td>
+                                        <td><?php  if($id_status_verifikasi == 1){?>
+                                            <button type="button" class="btn btn-danger">Belum di verifikasi</button>
+                                            <?php }else {?>
+                                            <button type="button" class="btn btn-success">Sudah di verifikasi</button>
+                                            <?php } ?>
+                                        </td>
                                     </tr>
-                                   
+                                    <?php endforeach;?>
                                 </tbody>
                             </table>
                         </div>

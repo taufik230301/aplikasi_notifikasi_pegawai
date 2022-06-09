@@ -8,6 +8,7 @@ class Pegawai extends CI_Controller {
 		parent::__construct();
 		$this->load->model('m_user');
 		$this->load->model('m_cuti');
+		$this->load->model('m_notifikasi');
 	}
 
 	public function view_admin()
@@ -48,7 +49,9 @@ class Pegawai extends CI_Controller {
 
 	if ($this->session->userdata('logged_in') == true AND $this->session->userdata('id_user_level') == 2) {
 
-		$this->load->view('hrd/data_pegawai');
+		$data['user'] = $this->m_user->read_all_data_user();
+
+		$this->load->view('hrd/data_pegawai', $data);
 
 	}else{
 
@@ -114,10 +117,13 @@ class Pegawai extends CI_Controller {
 	public function notifikasi_jam_kerja()
 	{
 		$id = $this->input->post('id_user');
-		
-		$hasil = $this->m_user->update_jam_kerja($id);
+		$pesan = $this->input->post('pesan');
+		$id_kategori_notifikasi = 2;
 
-			if($hasil==false){
+		$hasil_2 = $this->m_notifikasi->insert_notifikasi($pesan, $id, $id_kategori_notifikasi);
+		$hasil_1 = $this->m_user->update_jam_kerja($id);
+
+			if($hasil_1 AND $hasil_2 == false){
                 $this->session->set_flashdata('eror_input_jam_kerja','eror_input_jam_kerja');
                 redirect('Jam_Kerja/view_admin');
 			}else{
