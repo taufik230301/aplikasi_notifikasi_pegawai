@@ -7,7 +7,7 @@
                     <div class="sb-nav-link-icon"><i class="fas fa-tachometer-alt"></i></div>
                     Dashboard
                 </a>
-                <a class="nav-link" href="<?=base_url();?>Jam_Kerja/view_pegawai">
+                <a class="nav-link" href="<?=base_url();?>Jam_Kerja/view_pegawai/<?=$this->session->userdata('id_user');?>">
                     <div class="sb-nav-link-icon">
                         <i class="fas fa-clock"></i></div>
                     Jam Kerja

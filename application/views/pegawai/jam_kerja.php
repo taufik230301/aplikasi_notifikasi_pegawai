@@ -20,44 +20,53 @@
                     <div class="card mb-4">
                         <div class="card-header">
                             <i class="fas fa-table me-1"></i>
-                            Data Jam Kerja Pegawai
+                            Data Jam Kerja <?php
+                            
+                            if($jam_kerja == NULL){
+                                echo "Kosong";
+                            }else{
+                                echo $jam_kerja[0]['nama_lengkap'];
+                            }
+                            
+                            ?>
                         </div>
                         <div class="card-body">
                             <table id="datatablesSimple">
                                 <thead>
                                     <tr>
                                         <th>No</th>
-                                        <th>Jam Masuk Kerja</th>
-                                        <th>Jam Berakhir Kerja</th>
+                                        <th>Mulai Bekerja</th>
+                                        <th>Akhir Bekerja</th>
                                         <th>Hari</th>
-                                        
+
                                     </tr>
                                 </thead>
                                 <tbody>
+                                    <?php
+                                            $id = 0;
+                                            foreach($jam_kerja as $i)
+                                            :
+                                            $id++;
+                                            $id_user = $i['id_user'];
+                                            $nama_lengkap = $i['nama_lengkap'];
+                                            $jam_kerja_start = $i['jam_kerja_start'];
+                                            $jam_kerja_end = $i['jam_kerja_end'];
+                                            $hari = $i['hari'];
+                                    ?>
                                     <tr>
-                                        <td>Tiger Nixon</td>
-                                        <td>System Architect</td>
-                                        <td>Edinburgh</td>
-                                        <td>61</td>
+                                        <td><?=$id?></td>
+                                        <td><?=$jam_kerja_start?></td>
+                                        <td><?=$jam_kerja_end?></td>
+                                        <td><?=$hari?></td>
                                     </tr>
+
+                                    <?php endforeach;?>
                                 </tbody>
                             </table>
                         </div>
                     </div>
                 </div>
             </main>
-            <footer class="py-4 bg-light mt-auto">
-                <div class="container-fluid px-4">
-                    <div class="d-flex align-items-center justify-content-between small">
-                        <div class="text-muted">Copyright &copy; Your Website 2022</div>
-                        <div>
-                            <a href="#">Privacy Policy</a>
-                            &middot;
-                            <a href="#">Terms &amp; Conditions</a>
-                        </div>
-                    </div>
-                </div>
-            </footer>
         </div>
     </div>
     <?php $this->load->view("pegawai/components/js.php") ?>

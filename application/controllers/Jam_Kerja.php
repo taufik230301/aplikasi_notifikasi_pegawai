@@ -96,11 +96,12 @@ class Jam_Kerja extends CI_Controller {
 		
     }
 
-    public function view_pegawai()
+    public function view_pegawai($id_user)
 	{
 		if ($this->session->userdata('logged_in') == true AND $this->session->userdata('id_user_level') == 3) {
 
-		$this->load->view('pegawai/jam_kerja');
+		$data['jam_kerja'] = $this->m_jam_kerja->read_all_data_jam_kerja_by_id($id_user);
+		$this->load->view('pegawai/jam_kerja', $data);
 
 		}else{
 

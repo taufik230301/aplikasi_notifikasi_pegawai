@@ -13,12 +13,16 @@
                 </a>
                 <a class="nav-link" href="<?=base_url();?>Jam_Kerja/view_hrd">
                     <div class="sb-nav-link-icon">
-                    <i class="fas fa-clock"></i></div>
+                        <i class="fas fa-clock"></i></div>
                     Jam Kerja
                 </a>
                 <a class="nav-link" href="<?=base_url();?>Cuti/view_hrd">
                     <div class="sb-nav-link-icon"><i class="fas fa-table"></i></div>
                     Cuti
+                </a>
+                <a class="nav-link" href="<?=base_url();?>Notifikasi/view_hrd">
+                    <div class="sb-nav-link-icon"><i class="fas fa-clipboard-list"></i></div>
+                    Log Notifikasi
                 </a>
             </div>
         </div>
