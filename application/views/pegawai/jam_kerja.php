@@ -44,6 +44,25 @@
     });
     </script>
     <?php } ?>
+    <?php if ($this->session->flashdata('hapus')){ ?>
+    <script>
+    swal({
+        title: "Berhasil Dihapus!",
+        text: "Data Berhasil Dihapus!",
+        icon: "success"
+    });
+    </script>
+    <?php } ?>
+
+    <?php if ($this->session->flashdata('eror_hapus')){ ?>
+    <script>
+    swal({
+        title: "Eror!",
+        text: "Gagal Menghapus Data!",
+        icon: "error"
+    });
+    </script>
+    <?php } ?>
     <?php $this->load->view("pegawai/components/navbar.php") ?>
     <div id="layoutSidenav">
         <?php $this->load->view("pegawai/components/sidebar.php") ?>
@@ -132,10 +151,11 @@
                                                         aria-label="Close"></button>
                                                 </div>
                                                 <div class="modal-body">
-                                                    <form action="<?=base_url();?>Jam_kerja/delete_jam_kerja_pegawai"
+                                                    <form action="<?=base_url();?>Jam_kerja/hapus_jam_kerja_pegawai"
                                                         method="POST">
                                                         <input type="text" value="<?=$id_jam_kerja?>"
                                                             name="id_jam_kerja" hidden>
+                                                        <input type="text" value="<?=$id_user?>" name="id_user" hidden>
 
                                                         <p>Apakah kamu ingin menghapus data jam kerja
                                                             ini?</i></b></p>

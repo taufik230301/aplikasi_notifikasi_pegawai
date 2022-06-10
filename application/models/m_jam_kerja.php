@@ -47,4 +47,18 @@ class M_jam_kerja extends CI_Model
              return false;
     }
 
+    public function delete_jam_kerja($id_jam_kerja)
+    {
+        $this->db->trans_start();
+
+        $this->db->query("DELETE FROM jam_kerja WHERE id_jam_kerja='$id_jam_kerja'");
+        
+ 
+        $this->db->trans_complete();
+         if($this->db->trans_status()==true)
+             return true;
+         else
+             return false;
+    }
+
 }

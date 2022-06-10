@@ -91,6 +91,24 @@ class Jam_Kerja extends CI_Controller {
 		
 
 	}
+
+	public function hapus_jam_kerja_pegawai()
+	{
+		$id = $this->input->post('id_user');
+		$id_jam_kerja = $this->input->post('id_jam_kerja');
+
+			$hasil = $this->m_jam_kerja->delete_jam_kerja($id_jam_kerja);
+
+			if($hasil==false){
+                $this->session->set_flashdata('eror_hapus','eror_hapus');
+                redirect('Jam_Kerja/view_pegawai/'.$id);
+			}else{
+				$this->session->set_flashdata('hapus','hapus');
+				redirect('Jam_Kerja/view_pegawai/'.$id);
+			}
+		
+
+	}
 	
 	public function detail_jam_kerja($id_user)
 	{
