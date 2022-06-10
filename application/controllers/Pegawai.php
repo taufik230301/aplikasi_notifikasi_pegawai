@@ -16,6 +16,8 @@ class Pegawai extends CI_Controller {
 		if ($this->session->userdata('logged_in') == true AND $this->session->userdata('id_user_level') == 1) {
 
 		$data['user'] = $this->m_user->read_all_data_user();
+		
+
 
 		$this->load->view('admin/data_pegawai', $data);
 

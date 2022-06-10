@@ -3,6 +3,13 @@
 class M_user extends CI_Model
 {
 
+    public function count_data_user()
+    {
+        $hasil=$this->db->query("SELECT COUNT(id_user) as total_pegawai FROM user JOIN user_detail ON user.id_user_detail = user_detail.id_user_detail WHERE id_user_level=3");
+        return $hasil->row_array();
+    }
+
+
     public function read_all_data_user()
     {
         
