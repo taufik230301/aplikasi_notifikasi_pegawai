@@ -385,7 +385,7 @@
                                                         method="POST">
                                                         <input type="text" value="<?=$id_user?>" name="id_user" hidden>
 
-                                                        <p>Apakah kamu ingin mengirim notifikasi cuti kepada karyawan
+                                                        <p>Apakah kamu ingin menghapus data karyawan
                                                             ini?</i></b></p>
 
                                                         <div class="modal-footer">

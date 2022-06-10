@@ -33,4 +33,18 @@ class M_jam_kerja extends CI_Model
             return false;
     }
 
+    public function update_jam_kerja($jam_kerja_start, $jam_kerja_end, $id_hari , $id_jam_kerja)
+    {
+        $this->db->trans_start();
+
+        $this->db->query("UPDATE jam_kerja SET jam_kerja_start='$jam_kerja_start', jam_kerja_end='$jam_kerja_end', id_hari='$id_hari' WHERE id_jam_kerja='$id_jam_kerja'");
+        
+ 
+        $this->db->trans_complete();
+         if($this->db->trans_status()==true)
+             return true;
+         else
+             return false;
+    }
+
 }
