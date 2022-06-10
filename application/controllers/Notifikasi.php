@@ -38,6 +38,21 @@ class Notifikasi extends CI_Controller {
 			redirect('Login/index');
 
 		}
+	}
+	
+	public function view_pegawai($id_user)
+	{
+		if ($this->session->userdata('logged_in') == true AND $this->session->userdata('id_user_level') == 3) {
+
+        $data['notifikasi'] = $this->m_notifikasi->read_all_notifikasi_by_id($id_user);
+		$this->load->view('pegawai/notifikasi', $data);
+
+		}else{
+
+			$this->session->set_flashdata('loggin_no_session','loggin_no_session');
+			redirect('Login/index');
+
+		}
     }
 
 }

@@ -35,7 +35,7 @@
                                 </div>
                                 <div class="card-body">Pegawai</div>
                                 <div class="card-footer d-flex align-items-center justify-content-between">
-                                    <a class="small text-white stretched-link" href="#">View Details</a>
+                                    <a class="small text-white stretched-link" href="<?=base_url();?>Pegawai/view_hrd">View Details</a>
                                     <div class="small text-white"><i class="fas fa-angle-right"></i></div>
                                 </div>
                             </div>
@@ -47,7 +47,7 @@
                                 </div>
                                 <div class="card-body">Jam Kerja</div>
                                 <div class="card-footer d-flex align-items-center justify-content-between">
-                                    <a class="small text-white stretched-link" href="#">View Details</a>
+                                    <a class="small text-white stretched-link" href="<?=base_url();?>Jam_Kerja/view_hrd">View Details</a>
                                     <div class="small text-white"><i class="fas fa-angle-right"></i></div>
                                 </div>
                             </div>
@@ -55,11 +55,11 @@
                         <div class="col-xl-3 col-md-6">
                             <div class="card bg-success text-white mb-4">
                                 <div class="card-body">
-                                    <h2>2</h2>
+                                    <h2><?=$total_cuti['total_cuti']?></h2>
                                 </div>
                                 <div class="card-body">Cuti</div>
                                 <div class="card-footer d-flex align-items-center justify-content-between">
-                                    <a class="small text-white stretched-link" href="#">View Details</a>
+                                    <a class="small text-white stretched-link" href="<?=base_url();?>Cuti/view_hrd">View Details</a>
                                     <div class="small text-white"><i class="fas fa-angle-right"></i></div>
                                 </div>
                             </div>

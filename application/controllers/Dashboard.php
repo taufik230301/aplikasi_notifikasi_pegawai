@@ -18,6 +18,7 @@ class Dashboard extends CI_Controller {
 		$data['total_jam_kerja'] = $this->m_jam_kerja->count_data_jam_kerja();
 		$data['total_cuti'] = $this->m_cuti->count_data_cuti();
 
+
 		$this->load->view('admin/dashboard', $data);
 
 		}else{

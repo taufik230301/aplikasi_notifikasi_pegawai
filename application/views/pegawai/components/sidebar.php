@@ -7,7 +7,8 @@
                     <div class="sb-nav-link-icon"><i class="fas fa-tachometer-alt"></i></div>
                     Dashboard
                 </a>
-                <a class="nav-link" href="<?=base_url();?>Jam_Kerja/view_pegawai/<?=$this->session->userdata('id_user');?>">
+                <a class="nav-link"
+                    href="<?=base_url();?>Jam_Kerja/view_pegawai/<?=$this->session->userdata('id_user');?>">
                     <div class="sb-nav-link-icon">
                         <i class="fas fa-clock"></i></div>
                     Jam Kerja
@@ -15,6 +16,10 @@
                 <a class="nav-link" href="<?=base_url();?>Cuti/view_pegawai/<?=$this->session->userdata('id_user');?>">
                     <div class="sb-nav-link-icon"><i class="fas fa-users"></i></div>
                     Cuti
+                </a>
+                <a class="nav-link" href="<?=base_url();?>Notifikasi/view_pegawai/<?=$this->session->userdata('id_user');?>">
+                    <div class="sb-nav-link-icon"><i class="fas fa-clipboard-list"></i></div>
+                    Log Notifikasi
                 </a>
                 <a class="nav-link" href="<?=base_url();?>Lengkapi_Data/view_pegawai">
                     <div class="sb-nav-link-icon"><i class="fas fa-table"></i></div>

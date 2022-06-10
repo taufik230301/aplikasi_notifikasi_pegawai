@@ -104,16 +104,16 @@
                                     <div class="mb-3">
                                         <label for="jam_kerja_start" class="form-label">Jam Mulai Kerja</label>
                                         <input type="time" step="1" class="form-control" id="jam_kerja_start"
-                                            name="jam_kerja_start">
+                                            name="jam_kerja_start" required>
                                     </div>
                                     <div class="mb-3">
                                         <label for="jam_kerja_end" class="form-label">Jam Berakhir Kerja</label>
                                         <input type="time" step="1" class="form-control" id="jam_kerja_end"
-                                            name="jam_kerja_end">
+                                            name="jam_kerja_end" required>
                                     </div>
                                     <div class="mb-3">
                                         <label for="id_hari" class="form-label">Hari</label>
-                                        <select class="form-select" aria-label="Default select example" name="id_hari">
+                                        <select class="form-select" aria-label="Default select example" name="id_hari" required>
                                             <option value="1">Senin</option>
                                             <option value="2">Selasa</option>
                                             <option value="3">Rabu</option>

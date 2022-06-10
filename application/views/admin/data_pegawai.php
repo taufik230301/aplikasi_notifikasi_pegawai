@@ -214,23 +214,23 @@
                             <form action="<?=base_url();?>Pegawai/tambah_pegawai" method="POST">
                                 <div class="mb-3">
                                     <label for="username" class="form-label">Username</label>
-                                    <input type="text" class="form-control" id="username" name="username">
+                                    <input type="text" class="form-control" id="username" name="username" required>
                                 </div>
                                 <div class="mb-3">
                                     <label for="email" class="form-label">Email</label>
-                                    <input type="email" class="form-control" id="email" name="email">
+                                    <input type="email" class="form-control" id="email" name="email" required>
                                 </div>
                                 <div class="mb-3">
                                     <label for="password" class="form-label">Password</label>
-                                    <input type="text" class="form-control" id="password" name="password">
+                                    <input type="text" class="form-control" id="password" name="password" required>
                                 </div>
                                 <div class="mb-3">
                                     <label for="nama_lengkap" class="form-label">Nama Lengkap</label>
-                                    <input type="text" class="form-control" id="nama_lengkap" name="nama_lengkap">
+                                    <input type="text" class="form-control" id="nama_lengkap" name="nama_lengkap" required>
                                 </div>
                                 <div class="mb-3">
                                     <label for="jabatan" class="form-label">Jabatan</label>
-                                    <select class="form-select" aria-label="Default select example" name="jabatan">
+                                    <select class="form-select" aria-label="Default select example" name="jabatan" required>
                                         <option value="Supply Chain Management">Supply Chain Management</option>
                                         <option value="Site It Support">Site It Support</option>
                                         <option value="Site Human Resource & General Affair">Site Human Resource &
@@ -254,24 +254,24 @@
                                 </div>
                                 <div class="mb-3">
                                     <label for="title_posisi" class="form-label">Title Posisi</label>
-                                    <input type="text" class="form-control" id="title_posisi" name="title_posisi">
+                                    <input type="text" class="form-control" id="title_posisi" name="title_posisi" required>
                                 </div>
                                 <div class="mb-3">
                                     <label for="jenis_kelamin" class="form-label">Jenis Kelamin</label>
                                     <select class="form-select" aria-label="Default select example"
-                                        name="jenis_kelamin">
+                                        name="jenis_kelamin" required>
                                         <option value="L">L</option>
                                         <option value="P">P</option>
                                     </select>
                                 </div>
                                 <div class="mb-3">
                                     <label for="no_telp" class="form-label">Nomor HP</label>
-                                    <input type="text" class="form-control" id="no_telp" name="no_telp">
+                                    <input type="text" class="form-control" id="no_telp" name="no_telp" required>
                                 </div>
                                 <div class="mb-3">
                                     <label for="alamat" class="form-label">Alamat</label>
                                     <textarea class="form-control" placeholder="Leave a comment here"
-                                        id="floatingTextarea2" style="height: 100px" name="alamat"></textarea>
+                                        id="floatingTextarea2" style="height: 100px" name="alamat" required></textarea>
                                 </div>
                                 <button type="submit" class="btn btn-primary">Submit</button>
                             </form>

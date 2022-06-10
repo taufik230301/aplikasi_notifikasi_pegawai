@@ -148,7 +148,7 @@
                                                             <textarea class="form-control"
                                                                 placeholder="Leave a comment here"
                                                                 id="floatingTextarea2" style="height: 100px"
-                                                                name="pesan"></textarea>
+                                                                name="pesan" required></textarea>
                                                         </div>
                                                         <div class="modal-footer">
                                                             <button type="submit"
