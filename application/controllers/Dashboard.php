@@ -18,10 +18,6 @@ class Dashboard extends CI_Controller {
 		$data['total_jam_kerja'] = $this->m_jam_kerja->count_data_jam_kerja();
 		$data['total_cuti'] = $this->m_cuti->count_data_cuti();
 
-		
-
-	
-
 		$this->load->view('admin/dashboard', $data);
 
 		}else{
@@ -37,7 +33,11 @@ class Dashboard extends CI_Controller {
 	{
 		if ($this->session->userdata('logged_in') == true AND $this->session->userdata('id_user_level') == 2) {
 
-		$this->load->view('hrd/dashboard');
+		$data['total_pegawai'] = $this->m_user->count_data_user();
+		$data['total_jam_kerja'] = $this->m_jam_kerja->count_data_jam_kerja();
+		$data['total_cuti'] = $this->m_cuti->count_data_cuti();
+
+		$this->load->view('hrd/dashboard', $data);
 
 		}else{
 
