@@ -8,6 +8,12 @@ class M_jam_kerja extends CI_Model
         $hasil=$this->db->query("SELECT COUNT(id_jam_kerja) as total_jam_kerja FROM jam_kerja");
         return $hasil->row_array();
     }
+
+    public function count_data_jam_kerja_by_id($id_user)
+    {
+        $hasil=$this->db->query("SELECT COUNT(id_jam_kerja) as total_jam_kerja FROM jam_kerja WHERE id_user ='$id_user'");
+        return $hasil->row_array();
+    }
     
     public function read_all_data_jam_kerja_by_id($id_user)
     {

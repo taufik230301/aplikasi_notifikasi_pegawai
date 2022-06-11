@@ -54,7 +54,7 @@ class Dashboard extends CI_Controller {
 		if ($this->session->userdata('logged_in') == true AND $this->session->userdata('id_user_level') == 3) {
 
 		$data['total_cuti'] = $this->m_cuti->count_data_cuti_by_id($this->session->userdata('id_user'));
-		
+		$data['total_jam_kerja'] = $data['total_jam_kerja'] = $this->m_jam_kerja->count_data_jam_kerja_by_id($this->session->userdata('id_user'));
 		$this->load->view('pegawai/dashboard', $data);
 
 		}else{
