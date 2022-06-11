@@ -109,6 +109,45 @@ class Jam_Kerja extends CI_Controller {
 		
 
 	}
+
+	public function edit_jam_kerja_admin()
+	{
+		$id = $this->input->post('id_user');
+		$id_jam_kerja = $this->input->post('id_jam_kerja');
+		$jam_kerja_start = $this->input->post('jam_kerja_start');
+		$jam_kerja_end = $this->input->post('jam_kerja_end');
+		$id_hari = $this->input->post('id_hari');
+
+			$hasil = $this->m_jam_kerja->update_jam_kerja($jam_kerja_start, $jam_kerja_end, $id_hari , $id_jam_kerja);
+
+			if($hasil==false){
+                $this->session->set_flashdata('eror_edit','eror_edit');
+                redirect('Jam_Kerja/detail_jam_kerja/'.$id);
+			}else{
+				$this->session->set_flashdata('edit','edit');
+				redirect('Jam_Kerja/detail_jam_kerja/'.$id);
+			}
+		
+
+	}
+
+	public function hapus_jam_kerja_admin()
+	{
+		$id = $this->input->post('id_user');
+		$id_jam_kerja = $this->input->post('id_jam_kerja');
+
+			$hasil = $this->m_jam_kerja->delete_jam_kerja($id_jam_kerja);
+
+			if($hasil==false){
+                $this->session->set_flashdata('eror_hapus','eror_hapus');
+                redirect('Jam_Kerja/detail_jam_kerja/'.$id);
+			}else{
+				$this->session->set_flashdata('hapus','hapus');
+				redirect('Jam_Kerja/detail_jam_kerja/'.$id);
+			}
+		
+
+	}
 	
 	public function detail_jam_kerja($id_user)
 	{

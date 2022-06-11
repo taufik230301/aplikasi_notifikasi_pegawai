@@ -25,6 +25,44 @@
     });
     </script>
     <?php } ?>
+    <?php if ($this->session->flashdata('edit')){ ?>
+    <script>
+    swal({
+        title: "Berhasil Diedit!",
+        text: "Data Berhasil Diedit!",
+        icon: "success"
+    });
+    </script>
+    <?php } ?>
+
+    <?php if ($this->session->flashdata('eror_edit')){ ?>
+    <script>
+    swal({
+        title: "Eror!",
+        text: "Gagal Mengedit Data!",
+        icon: "error"
+    });
+    </script>
+    <?php } ?>
+    <?php if ($this->session->flashdata('hapus')){ ?>
+    <script>
+    swal({
+        title: "Berhasil Dihapus!",
+        text: "Data Berhasil Dihapus!",
+        icon: "success"
+    });
+    </script>
+    <?php } ?>
+
+    <?php if ($this->session->flashdata('eror_hapus')){ ?>
+    <script>
+    swal({
+        title: "Eror!",
+        text: "Gagal Menghapus Data!",
+        icon: "error"
+    });
+    </script>
+    <?php } ?>
     <?php $this->load->view("admin/components/navbar.php") ?>
     <div id="layoutSidenav">
         <?php $this->load->view("admin/components/sidebar.php") ?>
@@ -62,6 +100,7 @@
                                         <th>Jam Mulai Bekerja</th>
                                         <th>Jam Akhir Bekerja</th>
                                         <th>Hari</th>
+                                        <th>Aksi</th>
                                     </tr>
                                 </thead>
                                 <tbody>
@@ -71,6 +110,7 @@
                                             :
                                             $id++;
                                             $id_user = $i['id_user'];
+                                            $id_jam_kerja = $i['id_jam_kerja'];
                                             $nama_lengkap = $i['nama_lengkap'];
                                             $jam_kerja_start = $i['jam_kerja_start'];
                                             $jam_kerja_end = $i['jam_kerja_end'];
@@ -81,8 +121,105 @@
                                         <td><?=$jam_kerja_start?></td>
                                         <td><?=$jam_kerja_end?></td>
                                         <td><?=$hari?></td>
+                                        <td>
+                                            <center>
+                                                <div class="table-responsive">
+                                                    <div class="table table-striped table-hover ">
+                                                        <a href="" data-bs-toggle="modal"
+                                                            data-bs-target="#edit_jam_kerja<?=$id_jam_kerja?>"
+                                                            class="btn btn-primary"><i class="fas fa-edit"></i>
+                                                        </a>
+                                                    </div>
+                                                </div>
+                                                <div class="table-responsive">
+                                                    <div class="table table-striped table-hover ">
+                                                        <a href="" data-bs-toggle="modal"
+                                                            data-bs-target="#delete_jam_kerja<?=$id_jam_kerja?>"
+                                                            class="btn btn-danger"> <i class="fas fa-trash"></i>
+                                                        </a>
+                                                    </div>
+                                                </div>
+                                            </center>
+                                        </td>
                                     </tr>
+                                    <div class="modal fade" id="delete_jam_kerja<?=$id_jam_kerja?>" tabindex="-1"
+                                        aria-labelledby="exampleModalLabel" aria-hidden="true">
+                                        <div class="modal-dialog">
+                                            <div class="modal-content">
+                                                <div class="modal-header">
+                                                    <h5 class="modal-title" id="exampleModalLabel">Hapus Data Jam Kerja
+                                                    </h5>
+                                                    <button type="button" class="btn-close" data-bs-dismiss="modal"
+                                                        aria-label="Close"></button>
+                                                </div>
+                                                <div class="modal-body">
+                                                    <form action="<?=base_url();?>Jam_kerja/hapus_jam_kerja_admin"
+                                                        method="POST">
+                                                        <input type="text" value="<?=$id_jam_kerja?>"
+                                                            name="id_jam_kerja" hidden>
+                                                        <input type="text" value="<?=$id_user?>" name="id_user" hidden>
 
+                                                        <p>Apakah kamu ingin menghapus data jam kerja
+                                                            ini?</i></b></p>
+
+                                                        <div class="modal-footer">
+                                                            <button type="submit" class="btn btn-danger">Submit</button>
+                                                            <button type="button" class="btn btn-success"
+                                                                data-bs-dismiss="modal">Close</button>
+                                                        </div>
+                                                    </form>
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </div>
+                                    <div class="modal fade" id="edit_jam_kerja<?=$id_jam_kerja?>" tabindex="-1"
+                                        aria-labelledby="exampleModalLabel" aria-hidden="true">
+                                        <div class="modal-dialog">
+                                            <div class="modal-content">
+                                                <div class="modal-header">
+                                                    <h5 class="modal-title" id="exampleModalLabel">Edit Jam Kerja</h5>
+                                                    <button type="button" class="btn-close" data-bs-dismiss="modal"
+                                                        aria-label="Close"></button>
+                                                </div>
+                                                <div class="modal-body">
+                                                    <form action="<?=base_url();?>Jam_kerja/edit_jam_kerja_admin"
+                                                        method="POST">
+                                                        <input type="text" value="<?=$id_jam_kerja?>"
+                                                            name="id_jam_kerja" hidden>
+                                                        <input type="text" value="<?=$id_user?>" name="id_user" hidden>
+                                                        <div class="mb-3">
+                                                            <label for="jam_kerja_start" class="form-label">Jam Mulai
+                                                                Kerja</label>
+                                                            <input type="time" step="1" class="form-control"
+                                                                id="jam_kerja_start" name="jam_kerja_start"
+                                                                value="<?=$jam_kerja_start?>">
+                                                        </div>
+                                                        <div class="mb-3">
+                                                            <label for="jam_kerja_end" class="form-label">Jam Berakhir
+                                                                Kerja</label>
+                                                            <input type="time" step="1" class="form-control"
+                                                                id="jam_kerja_end" name="jam_kerja_end"
+                                                                value="<?=$jam_kerja_end?>">
+                                                        </div>
+                                                        <div class="mb-3">
+                                                            <label for="id_hari" class="form-label">Hari</label>
+                                                            <select class="form-select"
+                                                                aria-label="Default select example" name="id_hari">
+                                                                <option value="1">Senin</option>
+                                                                <option value="2">Selasa</option>
+                                                                <option value="3">Rabu</option>
+                                                                <option value="4">Kamis</option>
+                                                                <option value="5">Jum'at</option>
+                                                                <option value="6">Sabtu</option>
+                                                                <option value="7">Minggu</option>
+                                                            </select>
+                                                        </div>
+                                                        <button type="submit" class="btn btn-primary">Submit</button>
+                                                    </form>
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </div>
                                     <?php endforeach;?>
                                 </tbody>
                             </table>
@@ -113,7 +250,8 @@
                                     </div>
                                     <div class="mb-3">
                                         <label for="id_hari" class="form-label">Hari</label>
-                                        <select class="form-select" aria-label="Default select example" name="id_hari" required>
+                                        <select class="form-select" aria-label="Default select example" name="id_hari"
+                                            required>
                                             <option value="1">Senin</option>
                                             <option value="2">Selasa</option>
                                             <option value="3">Rabu</option>

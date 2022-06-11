@@ -45,6 +45,18 @@
     </script>
     <?php } ?>
 
+    
+
+    <?php if ($this->session->flashdata('error_send')){ ?>
+    <script>
+    swal({
+        title: "Eror!",
+        text: "Gagal Mengirim Verifikasi Data!",
+        icon: "error"
+    });
+    </script>
+    <?php } ?>
+
     <?php $this->load->view("admin/components/navbar.php") ?>
     <div id="layoutSidenav">
         <?php $this->load->view("admin/components/sidebar.php") ?>
@@ -166,7 +178,7 @@
                                         <div class="modal-dialog">
                                             <div class="modal-content">
                                                 <div class="modal-header">
-                                                    <h5 class="modal-title" id="exampleModalLabel">Modal title</h5>
+                                                    <h5 class="modal-title" id="exampleModalLabel">Verifikasi Data Pegawai</h5>
                                                     <button type="button" class="btn-close" data-bs-dismiss="modal"
                                                         aria-label="Close"></button>
                                                 </div>
@@ -174,10 +186,11 @@
                                                     <form action="<?=base_url();?>Pegawai/verifikasi_data"
                                                         method="POST">
                                                         <input type="text" value="<?=$id_user?>" name="id_user" hidden>
+                                                        <input type="text" value="<?=$email?>" name="email" hidden>
                                                         <p>Apakah kamu yakin ingin verifikasi data
                                                             ini?</i></b></p>
                                                         <div class="mb-3">
-                                                            <label for="alamat" class="form-label">Pesan
+                                                            <label for="pesan" class="form-label">Pesan
                                                                 Notifikasi</label>
                                                             <textarea class="form-control"
                                                                 placeholder="Leave a comment here"

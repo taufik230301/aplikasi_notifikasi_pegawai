@@ -82,6 +82,7 @@
                                             $nama_lengkap = $i['nama_lengkap'];
                                             $jabatan = $i['jabatan'];
                                             $updated_jam_kerja = $i['updated_jam_kerja'];
+                                            $email = $i['email'];
                                     ?>
                                     <tr>
                                         <td><?=$id?></td>
@@ -138,6 +139,7 @@
                                                     <form action="<?=base_url();?>Pegawai/notifikasi_jam_kerja"
                                                         method="POST">
                                                         <input type="text" value="<?=$id_user?>" name="id_user" hidden>
+                                                        <input type="text" value="<?=$email?>" name="email" hidden>
 
                                                         <p>Apakah kamu ingin mengirim notifikasi jam kerja kepada karyawan
                                                             ini?</i></b></p>

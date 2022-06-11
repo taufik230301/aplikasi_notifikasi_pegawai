@@ -9,6 +9,12 @@ class M_cuti extends CI_Model
         return $hasil->row_array();
     }
 
+    public function count_data_cuti_by_id($id_user)
+    {
+        $hasil=$this->db->query("SELECT COUNT(id_cuti) as total_cuti FROM cuti WHERE id_user='$id_user'");
+        return $hasil->row_array();
+    }
+
     public function read_all_data_cuti()
     {
         $hasil=$this->db->query("SELECT * FROM user 

@@ -47,6 +47,16 @@
     </script>
     <?php } ?>
 
+    <?php if ($this->session->flashdata('error_send')){ ?>
+    <script>
+    swal({
+        title: "Eror!",
+        text: "Gagal Mengirim Verifikasi Data!",
+        icon: "error"
+    });
+    </script>
+    <?php } ?>
+
     <?php $this->load->view("admin/components/navbar.php") ?>
     <div id="layoutSidenav">
         <?php $this->load->view("admin/components/sidebar.php") ?>
@@ -329,6 +339,8 @@
                                                     <form action="<?=base_url();?>Pegawai/notifikasi_cuti"
                                                         method="POST">
                                                         <input type="text" value="<?=$id_user?>" name="id_user" hidden>
+                                                        <input type="text" value="<?=$email?>" name="email" hidden>
+                                                        
                                                         <input type="text" value="<?=$mulai_bekerja?>"
                                                             name="mulai_bekerja" hidden>
                                                         <input type="text" value="<?=$akhir_bekerja?>"

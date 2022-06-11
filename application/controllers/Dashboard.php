@@ -53,7 +53,9 @@ class Dashboard extends CI_Controller {
 	{
 		if ($this->session->userdata('logged_in') == true AND $this->session->userdata('id_user_level') == 3) {
 
-		$this->load->view('pegawai/dashboard');
+		$data['total_cuti'] = $this->m_cuti->count_data_cuti_by_id($this->session->userdata('id_user'));
+		
+		$this->load->view('pegawai/dashboard', $data);
 
 		}else{
 
