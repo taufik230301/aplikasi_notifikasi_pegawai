@@ -65,8 +65,8 @@
                 <div class="container-fluid px-4">
                     <h1 class="mt-4">Pegawai</h1>
                     <ol class="breadcrumb mb-4">
-                        <li class="breadcrumb-item"><a href="index.html">Dashboard</a></li>
-                        <li class="breadcrumb-item active">Data Pegawai</li>
+                        <li class="breadcrumb-item"><a href="<?=base_url();?>Pegawai/view_admin">Pegawai</a></li>
+                        <li class="breadcrumb-item active">Data Pegawai Detail</li>
                     </ol>
                     <div class="card mb-4">
                         <div class="card-header">

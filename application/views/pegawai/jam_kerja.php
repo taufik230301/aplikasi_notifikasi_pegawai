@@ -71,7 +71,7 @@
                 <div class="container-fluid px-4">
                     <h1 class="mt-4">Jam Kerja</h1>
                     <ol class="breadcrumb mb-4">
-                        <li class="breadcrumb-item"><a href="index.html">Dashboard</a></li>
+                        <li class="breadcrumb-item"><a href="<?=base_url();?>Dashboard/dashboard_pegawai">Dashboard</a></li>
                         <li class="breadcrumb-item active">Data Jam Kerja</li>
                     </ol>
                     <button type="button" class="btn btn-primary" data-bs-toggle="modal" data-bs-target="#exampleModal">
