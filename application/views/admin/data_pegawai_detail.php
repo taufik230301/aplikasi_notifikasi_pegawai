@@ -244,33 +244,75 @@
                                                         <div class="mb-3">
                                                             <label for="jabatan" class="form-label">Jabatan</label>
                                                             <select class="form-select"
-                                                                aria-label="Default select example" name="jabatan" required>
-                                                                <option value="Supply Chain Management">Supply Chain
-                                                                    Management</option>
-                                                                <option value="Site It Support">Site It Support</option>
-                                                                <option value="Site Human Resource & General Affair">
-                                                                    Site Human Resource & General
+                                                                aria-label="Default select example" name="jabatan" <?php  if($id_status_verifikasi == '2'){
+                                        echo 'disabled';
+                                    }else{
+                                        echo 'required';
+                                    }  ?>>
+                                                                <option value="Supply Chain Management" <?php  if($jabatan == 'Supply Chain Management'){
+                                        echo 'selected';
+                                    }else{
+                                        echo '';
+                                    }  ?>>Supply Chain Management</option>
+                                                                <option value="Site It Support" <?php  if($jabatan == 'Site It Support'){
+                                        echo 'selected';
+                                    }else{
+                                        echo '';
+                                    }  ?>>Site It Support</option>
+                                                                <option value="Site Human Resource & General Affair" <?php  if($jabatan == 'Site Human Resource & General Affair'){
+                                        echo 'selected';
+                                    }else{
+                                        echo '';
+                                    }  ?>>Site Human Resource & General
                                                                     Affair</option>
-                                                                <option value="Site Finance & Accounting">Site Finance &
-                                                                    Accounting </option>
-                                                                <option value="Reporting & Gov. Relation">Reporting &
-                                                                    Gov. Relation</option>
+                                                                <option value="Site Finance & Accounting" <?php  if($jabatan == 'Site Finance & Accounting'){
+                                        echo 'selected';
+                                    }else{
+                                        echo '';
+                                    }  ?>>Site Finance & Accounting </option>
+                                                                <option value="Reporting & Gov. Relation" <?php  if($jabatan == 'Reporting & Gov. Relation'){
+                                        echo 'selected';
+                                    }else{
+                                        echo '';
+                                    }  ?>>Reporting & Gov. Relation</option>
 
-                                                                <option value="Plant Maintenance">Plant Maintenance
-                                                                </option>
-                                                                <option value="Mine Operation">Mine Operation</option>
-                                                                <option value="Mine Engineering ">Mine Engineering
-                                                                </option>
-                                                                <option value="Management Operation">Management
-                                                                    Operation</option>
-                                                                <option value="Health Safety Security Environment ">
-                                                                    Health Safety Security
+                                                                <option value="Plant Maintenance" <?php  if($jabatan == 'Plant Maintenance'){
+                                        echo 'selected';
+                                    }else{
+                                        echo '';
+                                    }  ?>>Plant Maintenance</option>
+                                                                <option value="Mine Operation" <?php  if($jabatan == 'Mine Operation'){
+                                        echo 'selected';
+                                    }else{
+                                        echo '';
+                                    }  ?>>Mine Operation</option>
+                                                                <option value="Mine Engineering" <?php  if($jabatan == 'Mine Engineering'){
+                                        echo 'selected';
+                                    }else{
+                                        echo '';
+                                    }  ?>>Mine Engineering </option>
+                                                                <option value="Management Operation" <?php  if($jabatan == 'Management Operation'){
+                                        echo 'selected';
+                                    }else{
+                                        echo '';
+                                    }  ?>>Management Operation</option>
+                                                                <option value="Health Safety Security Environment" <?php  if($jabatan == 'Health Safety Security Environment'){
+                                        echo 'selected';
+                                    }else{
+                                        echo '';
+                                    }  ?>>Health Safety Security
                                                                     Environment </option>
-                                                                <option value="External Relation, Csr & Security">
-                                                                    External Relation, Csr & Security
+                                                                <option value="External Relation, Csr & Security" <?php  if($jabatan == 'External Relation, Csr & Security'){
+                                        echo 'selected';
+                                    }else{
+                                        echo '';
+                                    }  ?>>External Relation, Csr & Security
                                                                 </option>
-                                                                <option value="Civil Project Lahat">Civil Project Lahat
-                                                                </option>
+                                                                <option value="Civil Project Lahat" <?php  if($jabatan == 'Civil Project Lahat'){
+                                        echo 'selected';
+                                    }else{
+                                        echo '';
+                                    }  ?>>Civil Project Lahat</option>
 
                                                             </select>
                                                         </div>
@@ -284,10 +326,22 @@
                                                             <label for="jenis_kelamin" class="form-label">Jenis
                                                                 Kelamin</label>
                                                             <select class="form-select"
-                                                                aria-label="Default select example"
-                                                                name="jenis_kelamin" required>
-                                                                <option value="L">L</option>
-                                                                <option value="P">P</option>
+                                                                aria-label="Default select example" name="jenis_kelamin"
+                                                                value="<?=$jenis_kelamin?>" <?php  if($id_status_verifikasi == '2'){
+                                        echo 'disabled';
+                                    }else{
+                                        echo 'required';
+                                    }  ?>>
+                                                                <option value="L" <?php  if($jenis_kelamin == 'L'){
+                                        echo 'selected';
+                                    }else{
+                                        echo '';
+                                    }  ?>>L</option>
+                                                                <option value="P" <?php  if($jenis_kelamin == 'P'){
+                                        echo 'selected';
+                                    }else{
+                                        echo '';
+                                    }  ?>>P</option>
                                                             </select>
                                                         </div>
                                                         <div class="mb-3">
@@ -306,13 +360,15 @@
                                                             <label for="mulai_bekerja" class="form-label">Mulai
                                                                 Bekerja</label>
                                                             <input type="date" class="form-control" id="mulai_bekerja"
-                                                                name="mulai_bekerja" value="<?=$mulai_bekerja?>" required>
+                                                                name="mulai_bekerja" value="<?=$mulai_bekerja?>"
+                                                                required>
                                                         </div>
                                                         <div class="mb-3">
                                                             <label for="akhir_bekerja" class="form-label">Akhir
                                                                 Bekerja</label>
                                                             <input type="date" class="form-control" id="akhir_bekerja"
-                                                                name="akhir_bekerja" value="<?=$akhir_bekerja?>" required>
+                                                                name="akhir_bekerja" value="<?=$akhir_bekerja?>"
+                                                                required>
                                                         </div>
                                                         <div class="modal-footer">
                                                             <button type="submit"
@@ -340,7 +396,7 @@
                                                         method="POST">
                                                         <input type="text" value="<?=$id_user?>" name="id_user" hidden>
                                                         <input type="text" value="<?=$email?>" name="email" hidden>
-                                                        
+
                                                         <input type="text" value="<?=$mulai_bekerja?>"
                                                             name="mulai_bekerja" hidden>
                                                         <input type="text" value="<?=$akhir_bekerja?>"

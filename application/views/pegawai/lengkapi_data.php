@@ -108,7 +108,7 @@
                                     }else{
                                         echo '';
                                     }  ?>>Mine Operation</option>
-                                    <option value="Mine Engineering " <?php  if($jabatan == 'Mine Engineering'){
+                                    <option value="Mine Engineering" <?php  if($jabatan == 'Mine Engineering'){
                                         echo 'selected';
                                     }else{
                                         echo '';
@@ -118,7 +118,7 @@
                                     }else{
                                         echo '';
                                     }  ?>>Management Operation</option>
-                                    <option value="Health Safety Security Environment " <?php  if($jabatan == 'Health Safety Security Environment '){
+                                    <option value="Health Safety Security Environment" <?php  if($jabatan == 'Health Safety Security Environment'){
                                         echo 'selected';
                                     }else{
                                         echo '';
@@ -153,8 +153,16 @@
                                     }else{
                                         echo 'required';
                                     }  ?>>
-                                    <option value="L">L</option>
-                                    <option value="P">P</option>
+                                    <option value="L" <?php  if($jenis_kelamin == 'L'){
+                                        echo 'selected';
+                                    }else{
+                                        echo '';
+                                    }  ?>>L</option>
+                                    <option value="P" <?php  if($jenis_kelamin == 'P'){
+                                        echo 'selected';
+                                    }else{
+                                        echo '';
+                                    }  ?>>P</option>
                                 </select>
                             </div>
                             <div class="mb-3">
