@@ -10,6 +10,28 @@ class Jam_Kerja extends CI_Controller {
 		$this->load->model('m_user');
 	}
 
+	public function view_email()
+	{
+		if ($this->session->userdata('logged_in') == true AND $this->session->userdata('id_user_level') == 1) {
+
+			$id_user = '27056d5824fb35494b338458279158b5';
+			$data['jam_kerja'] = $this->m_jam_kerja->read_all_data_jam_kerja_by_id($id_user);
+			// $data['jam_kerja'] = $this->m_jam_kerja->read_all_data_jam_kerja();
+			// echo var_dump($data);
+			// die();
+
+		$this->load->view('email', $data);
+
+
+		}else{
+
+			$this->session->set_flashdata('loggin_no_session','loggin_no_session');
+			redirect('Login/index');
+
+		}
+		
+	}
+
 	public function view_admin()
 	{
 		if ($this->session->userdata('logged_in') == true AND $this->session->userdata('id_user_level') == 1) {

@@ -107,8 +107,18 @@
                                     ?>
                                     <tr>
                                         <td><?=$id?></td>
-                                        <td><?=$nama_lengkap?></td>
-                                        <td><?=$email?></td>
+                                        <td><?php  if($nama_lengkap == NULL){?>
+                                            <button type="button" class="btn btn-danger">Belum di isi</button>
+                                            <?php }else {?>
+                                            <?=$nama_lengkap?>
+                                            <?php } ?></td>
+                                        
+                                        <td><?php  if($email == NULL){?>
+                                            <button type="button" class="btn btn-danger">Belum di isi</button>
+                                            <?php }else {?>
+                                            <?=$email?>
+                                            <?php } ?>
+                                            </td>
 
                                         <td><?php  if($mulai_bekerja == NULL){?>
                                             <button type="button" class="btn btn-danger">Belum di isi</button>

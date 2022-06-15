@@ -234,16 +234,21 @@ class Pegawai extends CI_Controller {
 		$email = $this->input->post('email');
 
 		$data['jam_kerja'] = $this->m_jam_kerja->read_all_data_jam_kerja_by_id($id);
-
-		$pesan_hari = '';
+		$pesan = "";
+		$pesan_hari = "<table>
+		$pesan</table>";
 		foreach($data['jam_kerja'] as $jam_kerja){
 			$hari = $jam_kerja['hari'];
 			$mulai = $jam_kerja['jam_kerja_start'];
 			$akhir= $jam_kerja['jam_kerja_end'];
-			$pesan_hari.="$hari mulai $mulai berkahir $akhir \n";
+			$pesan.="<tr><td>$hari</td><td>$mulai</td><td>$akhir</td></tr>";
 
 		}
 
+		
+
+		
+		$body = $this->load->view('email.php',$data,TRUE);
 	
 		
 
@@ -263,7 +268,7 @@ class Pegawai extends CI_Controller {
 		$this->email->to($email);
 		$this->email->subject($subject);
 		
-		$this->email->message($pesan_hari);
+		$this->email->message($body);
 		
 		
 

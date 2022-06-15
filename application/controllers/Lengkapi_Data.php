@@ -14,7 +14,8 @@ class Lengkapi_Data extends CI_Controller {
 
 		if ($this->session->userdata('logged_in') == true AND $this->session->userdata('id_user_level') == 3) {
 
-		$this->load->view('pegawai/lengkapi_data');
+		$data['pegawai'] = $this->m_user->read_all_data_user_by_id($this->session->userdata('id_user'));
+		$this->load->view('pegawai/lengkapi_data', $data);
 
 		
 		}else{

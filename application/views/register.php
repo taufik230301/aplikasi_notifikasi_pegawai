@@ -63,7 +63,7 @@
                 <button>Register
                     <i class="zmdi zmdi-arrow-right"></i>
                 </button>
-                <button><a href="<?=base_url();?>Login/index" style="color: white; text-decoration: none;">Login</a>
+                <button type="reset"><a href="<?=base_url();?>Login/index" style="color: white; text-decoration: none;">Login</a>
                     <i class="zmdi zmdi-arrow-right"></i>
                 </button>
             </form>
