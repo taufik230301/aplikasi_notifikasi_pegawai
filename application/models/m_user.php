@@ -90,6 +90,19 @@ class M_user extends CI_Model
             return false;
     }
 
+    public function edit_user($id, $username, $password)
+    {
+       $this->db->trans_start();
+
+       $this->db->query("UPDATE user SET username='$username', password='$password' WHERE id_user='$id'");
+
+       $this->db->trans_complete();
+        if($this->db->trans_status()==true)
+            return true;
+        else
+            return false;
+    }
+
     public function update_id_status_verifikasi($id_status_verifikasi, $id)
     {
        $this->db->trans_start();
