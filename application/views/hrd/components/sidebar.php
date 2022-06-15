@@ -24,6 +24,10 @@
                     <div class="sb-nav-link-icon"><i class="fas fa-clipboard-list"></i></div>
                     Log Notifikasi
                 </a>
+                <a class="nav-link" href="<?=base_url();?>Settings/view_hrd">
+                    <div class="sb-nav-link-icon"><i class="fas fa-clipboard-list"></i></div>
+                    Settings
+                </a>
             </div>
         </div>
         <div class="sb-sidenav-footer">
