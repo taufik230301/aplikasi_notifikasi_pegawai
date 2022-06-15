@@ -7,6 +7,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
     <!-- MATERIAL DESIGN ICONIC FONT -->
+    <link rel="icon" type="image/png" href="<?= base_url();?>assets/logo.ico" />
     <link rel="stylesheet"
         href="<?= base_url();?>assets/register/fonts/material-design-iconic-font/css/material-design-iconic-font.min.css">
 
@@ -63,7 +64,8 @@
                 <button>Register
                     <i class="zmdi zmdi-arrow-right"></i>
                 </button>
-                <button type="reset"><a href="<?=base_url();?>Login/index" style="color: white; text-decoration: none;">Login</a>
+                <button type="reset"><a href="<?=base_url();?>Login/index"
+                        style="color: white; text-decoration: none;">Login</a>
                     <i class="zmdi zmdi-arrow-right"></i>
                 </button>
             </form>
