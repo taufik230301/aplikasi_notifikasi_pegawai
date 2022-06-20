@@ -90,4 +90,45 @@ class Settings extends CI_Controller {
 
 
     }
+
+    public function view_pegawai()
+	{
+		if ($this->session->userdata('logged_in') == true AND $this->session->userdata('id_user_level') == 3) {
+
+		$this->load->view('pegawai/settings');
+
+		}else{
+
+			$this->session->set_flashdata('loggin_no_session','loggin_no_session');
+			redirect('Login/index');
+
+		}
+    }
+
+    public function proses_settings_pegawai()
+    {
+        $id = $this->session->userdata('id_user');
+        $username = $this->input->post('username');
+        $password = $this->input->post('password');
+        $re_password = $this->input->post('re_password');
+
+        if($password == $re_password)
+        {
+            $hasil = $this->m_user->edit_user($id, $username, $password);
+
+            if($hasil==false){
+                $this->session->set_flashdata('eror_edit','eror_edit');
+                redirect('settings/view_pegawai');
+			}else{
+				$this->session->set_flashdata('edit','edit');
+				redirect('settings/view_pegawai');
+            }
+
+        }else{
+            $this->session->set_flashdata('password_err','password_err');
+			redirect('settings/view_pegawai');
+        }
+
+
+    }
 }

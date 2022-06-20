@@ -140,7 +140,7 @@ class Pegawai extends CI_Controller {
           
       $from = $this->config->item('smtp_user');
       
-      $subject = 'Status Verifikasi Data Karyawan';
+      $subject = 'Laporan Status Verifikasi karyawan PT.Dizamatra Powerindo';
       
 
       $this->email->set_newline("\r\n");
@@ -168,6 +168,7 @@ class Pegawai extends CI_Controller {
 	public function notifikasi_cuti()
 	{
 		$id = $this->input->post('id_user');
+		$nama_lengkap = $this->input->post('nama_lengkap');
 		$mulai_bekerja = $this->input->post('mulai_bekerja');
 		$awal_cuti = $this->input->post('awal_cuti');
 		$berakhir_cuti = $this->input->post('berakhir_cuti');
@@ -187,13 +188,27 @@ class Pegawai extends CI_Controller {
 
 		$akhir_kerja_karyawan = date_format($akhir_kerja, "Y-m-d");
 
+		
+		$data =array(
+			"cuti" => array(
+				array(
+				"nama_lengkap" =>"Taufik",
+				"perihal" => "$perihal",
+				"mulai" => "$awal_cuti",
+				"berakhir" => "$berakhir_cuti"
+				)
+			)
+		); 
+		
+		$body = $this->load->view('cuti.php',$data,TRUE);
+
 		$this->load->library('email');
 		$this->load->config('email');
   
 			
 		$from = $this->config->item('smtp_user');
 		
-		$subject = 'Data Cuti Karyawan';
+		$subject = 'Laporan Roster karyawan PT.Dizamatra Powerindo';
 		
 		
 		
@@ -202,8 +217,7 @@ class Pegawai extends CI_Controller {
 		$this->email->from($from);
 		$this->email->to($email);
 		$this->email->subject($subject);
-		$pesan = "Cuti anda \r\n $perihal, dimulai saat $awal_cuti sampai $berakhir_cuti";
-		$this->email->message($pesan);
+		$this->email->message($body);
 
 
 		if ($this->email->send()) {
@@ -234,21 +248,29 @@ class Pegawai extends CI_Controller {
 		$email = $this->input->post('email');
 
 		$data['jam_kerja'] = $this->m_jam_kerja->read_all_data_jam_kerja_by_id($id);
-		$pesan = "";
-		$pesan_hari = "<table>
-		$pesan</table>";
-		foreach($data['jam_kerja'] as $jam_kerja){
-			$hari = $jam_kerja['hari'];
-			$mulai = $jam_kerja['jam_kerja_start'];
-			$akhir= $jam_kerja['jam_kerja_end'];
-			$pesan.="<tr><td>$hari</td><td>$mulai</td><td>$akhir</td></tr>";
+		
+		$data['total_jam_kerja'] = $data['total_jam_kerja'] = $this->m_jam_kerja->count_data_jam_kerja_by_id($id);
 
-		}
+		// echo $data['total_jam_kerja']['total_jam_kerja'];
+		// die();
+		if($data['total_jam_kerja']['total_jam_kerja'] == 6){
+
+		
+		// $pesan = "";
+		// $pesan_hari = "<table>
+		// $pesan</table>";
+		// foreach($data['jam_kerja'] as $jam_kerja){
+		// 	$hari = $jam_kerja['hari'];
+		// 	$mulai = $jam_kerja['jam_kerja_start'];
+		// 	$akhir= $jam_kerja['jam_kerja_end'];
+		// 	$pesan.="<tr><td>$hari</td><td>$mulai</td><td>$akhir</td></tr>";
+
+		// }
 
 		
 
 		
-		$body = $this->load->view('email.php',$data,TRUE);
+		$body = $this->load->view('jam_kerja.php',$data,TRUE);
 	
 		
 
@@ -258,7 +280,7 @@ class Pegawai extends CI_Controller {
 			
 		$from = $this->config->item('smtp_user');
 		
-		$subject = 'Data Jam Kerja Karyawan';
+		$subject = 'Laporan Jam kerja karyawan PT.Dizamatra Powerindo';
 		
 		
 		
@@ -282,10 +304,15 @@ class Pegawai extends CI_Controller {
 				$this->session->set_flashdata('input_jam_kerja','input_jam_kerja');
 				redirect('Jam_Kerja/view_admin');
 			}
-		} else {
+			} else {
 			$this->session->set_flashdata('error_send','error_send');
-			redirect('Pegawai/detail_pegawai_admin/'.$id);
+			redirect('Jam_Kerja/view_admin');
 		  }
+
+		}else{
+			$this->session->set_flashdata('error_send_no_jam_kerja','error_send_no_jam_kerja');
+			redirect('Jam_Kerja/view_admin');
+		}
 	}
     
 }

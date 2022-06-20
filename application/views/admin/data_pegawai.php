@@ -45,7 +45,7 @@
     </script>
     <?php } ?>
 
-    
+
 
     <?php if ($this->session->flashdata('error_send')){ ?>
     <script>
@@ -65,7 +65,8 @@
                 <div class="container-fluid px-4">
                     <h1 class="mt-4">Pegawai</h1>
                     <ol class="breadcrumb mb-4">
-                        <li class="breadcrumb-item"><a href="<?=base_url();?>Dashboard/dashboard_admin">Dashboard</a></li>
+                        <li class="breadcrumb-item"><a href="<?=base_url();?>Dashboard/dashboard_admin">Dashboard</a>
+                        </li>
                         <li class="breadcrumb-item active">Data Pegawai</li>
                     </ol>
                     <button type="button" class="btn btn-primary" data-bs-toggle="modal"
@@ -112,13 +113,13 @@
                                             <?php }else {?>
                                             <?=$nama_lengkap?>
                                             <?php } ?></td>
-                                        
+
                                         <td><?php  if($email == NULL){?>
                                             <button type="button" class="btn btn-danger">Belum di isi</button>
                                             <?php }else {?>
                                             <?=$email?>
                                             <?php } ?>
-                                            </td>
+                                        </td>
 
                                         <td><?php  if($mulai_bekerja == NULL){?>
                                             <button type="button" class="btn btn-danger">Belum di isi</button>
@@ -188,7 +189,8 @@
                                         <div class="modal-dialog">
                                             <div class="modal-content">
                                                 <div class="modal-header">
-                                                    <h5 class="modal-title" id="exampleModalLabel">Verifikasi Data Pegawai</h5>
+                                                    <h5 class="modal-title" id="exampleModalLabel">Verifikasi Data
+                                                        Pegawai</h5>
                                                     <button type="button" class="btn-close" data-bs-dismiss="modal"
                                                         aria-label="Close"></button>
                                                 </div>
@@ -205,7 +207,8 @@
                                                             <textarea class="form-control"
                                                                 placeholder="Leave a comment here"
                                                                 id="floatingTextarea2" style="height: 100px"
-                                                                name="pesan"></textarea>
+                                                                name="pesan" required>Kepada yang terhormat Bpk/Ibu <?=$nama_lengkap?> Data yang anda kirim sudah diverifikasi admin, 
+harap cek berkala dengan login ke aplikasi secara berkala, Trimakasih.</textarea>
                                                         </div>
                                                         <div class="modal-footer">
                                                             <button type="submit"
@@ -249,11 +252,13 @@
                                 </div>
                                 <div class="mb-3">
                                     <label for="nama_lengkap" class="form-label">Nama Lengkap</label>
-                                    <input type="text" class="form-control" id="nama_lengkap" name="nama_lengkap" required>
+                                    <input type="text" class="form-control" id="nama_lengkap" name="nama_lengkap"
+                                        required>
                                 </div>
                                 <div class="mb-3">
                                     <label for="jabatan" class="form-label">Jabatan</label>
-                                    <select class="form-select" aria-label="Default select example" name="jabatan" required>
+                                    <select class="form-select" aria-label="Default select example" name="jabatan"
+                                        required>
                                         <option value="Supply Chain Management">Supply Chain Management</option>
                                         <option value="Site It Support">Site It Support</option>
                                         <option value="Site Human Resource & General Affair">Site Human Resource &
@@ -277,12 +282,13 @@
                                 </div>
                                 <div class="mb-3">
                                     <label for="title_posisi" class="form-label">Title Posisi</label>
-                                    <input type="text" class="form-control" id="title_posisi" name="title_posisi" required>
+                                    <input type="text" class="form-control" id="title_posisi" name="title_posisi"
+                                        required>
                                 </div>
                                 <div class="mb-3">
                                     <label for="jenis_kelamin" class="form-label">Jenis Kelamin</label>
-                                    <select class="form-select" aria-label="Default select example"
-                                        name="jenis_kelamin" required>
+                                    <select class="form-select" aria-label="Default select example" name="jenis_kelamin"
+                                        required>
                                         <option value="L">L</option>
                                         <option value="P">P</option>
                                     </select>

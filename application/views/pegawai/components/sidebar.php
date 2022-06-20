@@ -25,6 +25,10 @@
                     <div class="sb-nav-link-icon"><i class="fas fa-table"></i></div>
                     Lengkapi Data
                 </a>
+                <a class="nav-link" href="<?=base_url();?>Settings/view_pegawai">
+                    <div class="sb-nav-link-icon"><i class="fas fa-table"></i></div>
+                    Settings
+                </a>
             </div>
         </div>
         <div class="sb-sidenav-footer">

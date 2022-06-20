@@ -6,7 +6,7 @@
 </head>
 
 <body class="sb-nav-fixed">
-<?php if ($this->session->flashdata('input_cuti')){ ?>
+    <?php if ($this->session->flashdata('input_cuti')){ ?>
     <script>
     swal({
         title: "Berhasil!",
@@ -35,6 +35,16 @@
     </script>
     <?php } ?>
 
+    <?php if ($this->session->flashdata('error_send_no_jam_kerja')){ ?>
+    <script>
+    swal({
+        title: "Eror!",
+        text: "Gagal Mengirim, Tambahkan Dulu Jam Kerja!",
+        icon: "error"
+    });
+    </script>
+    <?php } ?>
+
     <?php if ($this->session->flashdata('eror_input_cuti')){ ?>
     <script>
     swal({
@@ -53,7 +63,8 @@
                 <div class="container-fluid px-4">
                     <h1 class="mt-4">Jam Kerja</h1>
                     <ol class="breadcrumb mb-4">
-                        <li class="breadcrumb-item"><a href="<?=base_url();?>Dashboard/dashboard_admin">Dashboard</a></li>
+                        <li class="breadcrumb-item"><a href="<?=base_url();?>Dashboard/dashboard_admin">Dashboard</a>
+                        </li>
                         <li class="breadcrumb-item active">Data Jam Kerja</li>
                     </ol>
                     <div class="card mb-4">
@@ -141,7 +152,8 @@
                                                         <input type="text" value="<?=$id_user?>" name="id_user" hidden>
                                                         <input type="text" value="<?=$email?>" name="email" hidden>
 
-                                                        <p>Apakah kamu ingin mengirim notifikasi jam kerja kepada karyawan
+                                                        <p>Apakah kamu ingin mengirim notifikasi jam kerja kepada
+                                                            karyawan
                                                             ini?</i></b></p>
 
                                                         <div class="mb-3">
@@ -150,7 +162,8 @@
                                                             <textarea class="form-control"
                                                                 placeholder="Leave a comment here"
                                                                 id="floatingTextarea2" style="height: 100px"
-                                                                name="pesan" required></textarea>
+                                                                name="pesan"
+                                                                required>Jam Kerja <?=$nama_lengkap?> Tanggal <?=date("Y/m/d")?>.</textarea>
                                                         </div>
                                                         <div class="modal-footer">
                                                             <button type="submit"

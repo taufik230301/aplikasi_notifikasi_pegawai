@@ -35,7 +35,7 @@
 </head>
 
 <body>
-<?php if($this->session->flashdata('success_log_out')){?>
+    <?php if($this->session->flashdata('success_log_out')){?>
     <script>
     swal({
         title: "Success!",
@@ -44,7 +44,7 @@
     });
     </script>
     <?php } ?>
-    
+
     <?php if($this->session->flashdata('loggin_err')){?>
     <script>
     swal({
@@ -96,10 +96,13 @@
     <?php } ?>
 
     <div class="limiter">
-        <div class="container-login100" style="background-image: url('assets/login/images/bg-01.jpg');">
+        <div class="container-login100" style="background-image: url('<?=base_url();?>assets/login/images/bg-01.jpeg');">
             <div class="wrap-login100 p-t-30 p-b-50">
                 <span class="login100-form-title p-b-41">
                     Account Login
+                </span>
+                <span class="login100-form-title p-b-41">
+                    <img src="<?=base_url();?>assets/login/images/logo_login.jpeg" width="20%" alt="">
                 </span>
                 <form class="login100-form validate-form p-b-33 p-t-5" method="POST"
                     action="<?=base_url();?>Login/proses_login">

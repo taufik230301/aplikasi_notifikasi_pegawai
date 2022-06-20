@@ -6,7 +6,7 @@
 
     <meta charset="utf-8" />
 
-    <title>Anil Labs - Codeigniter mail templates</title>
+    <title>Laporan Jam kerja karyawan PT.Dizamatra Powerindo</title>
 
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
 
@@ -16,12 +16,10 @@
 
     <div>
 
-        <div style="font-size: 26px;font-weight: 700;letter-spacing: -0.02em;line-height: 32px;color: #41637e;font-family: sans-serif;text-align: center"
-            align="center" id="emb-email-header"><img
-                style="border: 0;-ms-interpolation-mode: bicubic;display: block;Margin-left: auto;Margin-right: auto;max-width: 152px"
-                src="https://cdns.klimg.com/dream.co.id/resized/640x320/news/2019/05/17/108124/tips-dapatkan-foto-keren-saat-traveling-1905170.jpg"
-                alt="" width="152" height="108"></div>
+
         <center>
+            <h2>Laporan Jam kerja karyawan PT.Dizamatra Powerindo</h2>
+            <p>Kepada yang terhormat Bpk/Ibu <b><?=$jam_kerja[0]['nama_lengkap']?></b>, berikut jadwal Jam Kerja anda sudah dikirim, harap cek secara berkala dengan melakukan login ke aplikasi, Trimakasih.</p>
             <table style="border:1px solid black;">
 
                 <thead style="border:1px solid black;">

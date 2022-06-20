@@ -9,6 +9,38 @@ class Cuti extends CI_Controller {
 		$this->load->model('m_cuti');
 	}
 
+	public function view_email()
+	{
+		if ($this->session->userdata('logged_in') == true AND $this->session->userdata('id_user_level') == 1) {
+
+			
+			$data =array(
+				"cuti" => array(
+					array(
+					"nama_lengkap" =>"Taufik",
+					"perihal" => "Cuti melahirkan",
+					"mulai" => "awal_cuti",
+					"berakhir" => "berakhir_cuti"
+					)
+				)
+			); 
+			// $id_user = '5ee3e835147bb9df5ea7e441142a65e2';
+			// $data['cuti'] = $this->m_cuti->read_all_data_cuti_by_id($id_user);
+			// echo var_dump($data);
+			// die();
+
+		$this->load->view('cuti', $data);
+
+
+		}else{
+
+			$this->session->set_flashdata('loggin_no_session','loggin_no_session');
+			redirect('Login/index');
+
+		}
+		
+	}
+
 	public function view_admin()
 	{
 		if ($this->session->userdata('logged_in') == true AND $this->session->userdata('id_user_level') == 1) {

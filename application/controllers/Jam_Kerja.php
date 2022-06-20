@@ -20,7 +20,7 @@ class Jam_Kerja extends CI_Controller {
 			// echo var_dump($data);
 			// die();
 
-		$this->load->view('email', $data);
+		$this->load->view('jam_kerja', $data);
 
 
 		}else{

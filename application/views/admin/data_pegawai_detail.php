@@ -57,6 +57,8 @@
     </script>
     <?php } ?>
 
+    
+
     <?php $this->load->view("admin/components/navbar.php") ?>
     <div id="layoutSidenav">
         <?php $this->load->view("admin/components/sidebar.php") ?>
@@ -244,11 +246,7 @@
                                                         <div class="mb-3">
                                                             <label for="jabatan" class="form-label">Jabatan</label>
                                                             <select class="form-select"
-                                                                aria-label="Default select example" name="jabatan" <?php  if($id_status_verifikasi == '2'){
-                                        echo 'disabled';
-                                    }else{
-                                        echo 'required';
-                                    }  ?>>
+                                                                aria-label="Default select example" name="jabatan">
                                                                 <option value="Supply Chain Management" <?php  if($jabatan == 'Supply Chain Management'){
                                         echo 'selected';
                                     }else{
@@ -327,11 +325,7 @@
                                                                 Kelamin</label>
                                                             <select class="form-select"
                                                                 aria-label="Default select example" name="jenis_kelamin"
-                                                                value="<?=$jenis_kelamin?>" <?php  if($id_status_verifikasi == '2'){
-                                        echo 'disabled';
-                                    }else{
-                                        echo 'required';
-                                    }  ?>>
+                                                                value="<?=$jenis_kelamin?>">
                                                                 <option value="L" <?php  if($jenis_kelamin == 'L'){
                                         echo 'selected';
                                     }else{
@@ -396,6 +390,7 @@
                                                         method="POST">
                                                         <input type="text" value="<?=$id_user?>" name="id_user" hidden>
                                                         <input type="text" value="<?=$email?>" name="email" hidden>
+                                                        <input type="text" value="<?=$nama_lengkap?>" name="nama_lengkap" hidden>
 
                                                         <input type="text" value="<?=$mulai_bekerja?>"
                                                             name="mulai_bekerja" hidden>
@@ -406,18 +401,18 @@
                                                         <div class="mb-3">
                                                             <label for="awal_cuti" class="form-label">Awal Cuti</label>
                                                             <input type="date" class="form-control" id="awal_cuti"
-                                                                name="awal_cuti">
+                                                                name="awal_cuti" required>
                                                         </div>
                                                         <div class="mb-3">
                                                             <label for="berakhir_cuti" class="form-label">Berakhir
                                                                 Cuti</label>
                                                             <input type="date" class="form-control" id="berakhir_cuti"
-                                                                name="berakhir_cuti">
+                                                                name="berakhir_cuti" required>
                                                         </div>
                                                         <div class="mb-3">
                                                             <label for="perihal" class="form-label">Perihal Cuti</label>
                                                             <input type="text" class="form-control" id="perihal"
-                                                                name="perihal">
+                                                                name="perihal" required>
                                                         </div>
                                                         <div class="mb-3">
                                                             <label for="alamat" class="form-label">Pesan
@@ -425,7 +420,7 @@
                                                             <textarea class="form-control"
                                                                 placeholder="Leave a comment here"
                                                                 id="floatingTextarea2" style="height: 100px"
-                                                                name="pesan"></textarea>
+                                                                name="pesan" required></textarea>
                                                         </div>
                                                         <div class="modal-footer">
                                                             <button type="submit"
