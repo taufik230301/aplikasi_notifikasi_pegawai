@@ -10,7 +10,7 @@
     <script>
     swal({
         title: "Berhasil!",
-        text: "Data Notifikasi Cuti Berhasil Dikirim!",
+        text: "Data Notifikasi Rooster Berhasil Dikirim!",
         icon: "success"
     });
     </script>

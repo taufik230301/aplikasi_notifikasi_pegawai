@@ -26,8 +26,8 @@
                 <thead style="border:1px solid black;">
                     <tr style="border:1px solid black;">
                         <th style="border:1px solid black;">Perihal</th>
-                        <th style="border:1px solid black;">Mulai Cuti</th>
-                        <th style="border:1px solid black;">Akhir Cuti</th>
+                        <th style="border:1px solid black;">Mulai Rooster</th>
+                        <th style="border:1px solid black;">Akhir Rooster</th>
                     </tr>
                 </thead>
                 <?php

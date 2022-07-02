@@ -12,15 +12,15 @@
         <div id="layoutSidenav_content">
             <main>
                 <div class="container-fluid px-4">
-                    <h1 class="mt-4">Log Notifikasi</h1>
+                    <h1 class="mt-4">Riwayat Jam Kerja</h1>
                     <ol class="breadcrumb mb-4">
                         <li class="breadcrumb-item"><a href="<?=base_url();?>Dashboard/dashboard_pegawai">Dashboard</a></li>
-                        <li class="breadcrumb-item active">Data Log Notifikasi</li>
+                        <li class="breadcrumb-item active">Data Riwayat Jam Kerja</li>
                     </ol>
                     <div class="card mb-4">
                         <div class="card-header">
                             <i class="fas fa-table me-1"></i>
-                            Data Log Notifikasi HRD
+                            Data Riwayat Jam Kerja HRD
                         </div>
                         <div class="card-body">
                             <table id="datatablesSimple">
@@ -61,18 +61,7 @@
                     </div>
                 </div>
             </main>
-            <footer class="py-4 bg-light mt-auto">
-                <div class="container-fluid px-4">
-                    <div class="d-flex align-items-center justify-content-between small">
-                        <div class="text-muted">Copyright &copy; Your Website 2022</div>
-                        <div>
-                            <a href="#">Privacy Policy</a>
-                            &middot;
-                            <a href="#">Terms &amp; Conditions</a>
-                        </div>
-                    </div>
-                </div>
-            </footer>
+            
         </div>
     </div>
     <?php $this->load->view("pegawai/components/js.php") ?>

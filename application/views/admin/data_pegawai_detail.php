@@ -11,7 +11,7 @@
     <script>
     swal({
         title: "Berhasil!",
-        text: "Data Notifikasi Cuti Berhasil Dikirim!",
+        text: "Data Notifikasi Rooster Berhasil Dikirim!",
         icon: "success"
     });
     </script>
@@ -193,14 +193,14 @@
                                             <?php if($mulai_bekerja and $date < 0){?>
                                             <a href="" data-bs-toggle="modal"
                                                 data-bs-target="#notifikasi_cuti<?=$id_user?>"
-                                                class="btn btn-primary">Kirim Notifikasi Cuti <i
+                                                class="btn btn-primary">Kirim Notifikasi Rooster <i
                                                     class="fas fa-paper-plane"></i>
                                             </a>
                                             <?php } elseif($mulai_bekerja == NULL) {?>
                                             <button type="button" class="btn btn-danger">Belum Di Set</button>
 
                                             <?php } else {?>
-                                            <button type="button" class="btn btn-danger">Belum Butuh Cuti</button>
+                                            <button type="button" class="btn btn-danger">Belum Butuh Rooster</button>
                                             <?php } ?>
 
                                         </td>
@@ -380,7 +380,7 @@
                                         <div class="modal-dialog">
                                             <div class="modal-content">
                                                 <div class="modal-header">
-                                                    <h5 class="modal-title" id="exampleModalLabel">Kirim Notifkasi Cuti
+                                                    <h5 class="modal-title" id="exampleModalLabel">Kirim Notifkasi Rooster
                                                     </h5>
                                                     <button type="button" class="btn-close" data-bs-dismiss="modal"
                                                         aria-label="Close"></button>
@@ -399,18 +399,18 @@
                                                         <p>Apakah kamu ingin mengirim notifikasi cuti kepada karyawan
                                                             ini?</i></b></p>
                                                         <div class="mb-3">
-                                                            <label for="awal_cuti" class="form-label">Awal Cuti</label>
+                                                            <label for="awal_cuti" class="form-label">Awal Rooster</label>
                                                             <input type="date" class="form-control" id="awal_cuti"
                                                                 name="awal_cuti" required>
                                                         </div>
                                                         <div class="mb-3">
                                                             <label for="berakhir_cuti" class="form-label">Berakhir
-                                                                Cuti</label>
+                                                            Rooster</label>
                                                             <input type="date" class="form-control" id="berakhir_cuti"
                                                                 name="berakhir_cuti" required>
                                                         </div>
                                                         <div class="mb-3">
-                                                            <label for="perihal" class="form-label">Perihal Cuti</label>
+                                                            <label for="perihal" class="form-label">Perihal Rooster</label>
                                                             <input type="text" class="form-control" id="perihal"
                                                                 name="perihal" required>
                                                         </div>

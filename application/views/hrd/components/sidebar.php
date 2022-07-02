@@ -18,11 +18,11 @@
                 </a>
                 <a class="nav-link" href="<?=base_url();?>Cuti/view_hrd">
                     <div class="sb-nav-link-icon"><i class="fas fa-table"></i></div>
-                    Cuti
+                    Rooster
                 </a>
                 <a class="nav-link" href="<?=base_url();?>Notifikasi/view_hrd">
                     <div class="sb-nav-link-icon"><i class="fas fa-clipboard-list"></i></div>
-                    Log Notifikasi
+                    Riwayat Jam Kerja
                 </a>
                 <a class="nav-link" href="<?=base_url();?>Settings/view_hrd">
                     <div class="sb-nav-link-icon"><i class="fas fa-clipboard-list"></i></div>

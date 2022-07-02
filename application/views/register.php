@@ -38,10 +38,11 @@
     });
     </script>
     <?php } ?>
-    <div class="wrapper" style="background-image: url('assets/register/images/bg-registration-form-1.jpg');">
+    
+    <div class="wrapper" style="background-image: url('http://localhost/aplikasi_notifikasi_pegawai/assets/register/images/background-register.jpg');">
         <div class="inner">
             <div class="image-holder">
-                <img src="<?= base_url();?>assets/register/images/registration-form-1.jpg" alt="">
+                <img src="<?= base_url();?>assets/register/images/register.jpg" alt="">
             </div>
             <form action="<?=base_url();?>Register/register_proses" method="POST">
                 <h3>Daftar Akun</h3>

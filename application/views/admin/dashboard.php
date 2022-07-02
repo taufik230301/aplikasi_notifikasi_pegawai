@@ -57,7 +57,7 @@
                                 <div class="card-body">
                                     <h2><?=$total_cuti['total_cuti']?></h2>
                                 </div>
-                                <div class="card-body">Cuti</div>
+                                <div class="card-body">Rooster</div>
                                 <div class="card-footer d-flex align-items-center justify-content-between">
                                     <a class="small text-white stretched-link" href="<?=base_url();?>Cuti/view_admin">View Details</a>
                                     <div class="small text-white"><i class="fas fa-angle-right"></i></div>

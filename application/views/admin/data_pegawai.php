@@ -87,7 +87,7 @@
                                         <th>Email</th>
                                         <th>Mulai Bekerja</th>
                                         <th>Akhir Bekerja</th>
-                                        <th>Status Cuti</th>
+                                        <th>Status Rooster</th>
                                         <th>Status Verifikasi</th>
                                         <th>Aksi</th>
                                     </tr>
@@ -146,14 +146,14 @@
                                             <?php if($mulai_bekerja and $date < 0){?>
                                             <a href="" data-bs-toggle="modal"
                                                 data-bs-target="#notifikasi_cuti<?=$id_user?>"
-                                                class="btn btn-primary">Kirim Notifikasi Cuti <i
+                                                class="btn btn-primary">Kirim Notifikasi Rooster <i
                                                     class="fas fa-paper-plane"></i>
                                             </a>
                                             <?php } elseif($mulai_bekerja == NULL) {?>
                                             <button type="button" class="btn btn-danger">Belum Di Set</button>
 
                                             <?php } else {?>
-                                            <button type="button" class="btn btn-danger">Belum Butuh Cuti</button>
+                                            <button type="button" class="btn btn-danger">Belum Butuh Rooster</button>
                                             <?php } ?>
                                         </td>
                                         <td><?php  if($id_status_verifikasi == 1){?>
