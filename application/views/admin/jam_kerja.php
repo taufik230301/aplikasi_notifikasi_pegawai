@@ -79,6 +79,7 @@
                                         <th>No</th>
                                         <th>Nama</th>
                                         <th>Jabatan</th>
+                                        <th>Terakhir Dikirim</th>
                                         <th>Notif Jam Kerja</th>
                                         <th>Lihat Jam Kerja</th>
                                     </tr>
@@ -99,6 +100,11 @@
                                         <td><?=$id?></td>
                                         <td><?=$nama_lengkap?></td>
                                         <td><?=$jabatan?></td>
+                                        <td><?php  if($updated_jam_kerja == NULL){?>
+                                            <button type="button" class="btn btn-danger">Belum di set</button>
+                                            <?php }else {?>
+                                            <?=$updated_jam_kerja?>
+                                            <?php } ?></td>
                                         <td>
 
                                             <?php 

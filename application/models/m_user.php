@@ -13,10 +13,13 @@ class M_user extends CI_Model
     public function read_all_data_user()
     {
         
-        $hasil=$this->db->query("SELECT * FROM user JOIN user_detail ON user.id_user_detail = user_detail.id_user_detail WHERE id_user_level=3");
+        $hasil=$this->db->query("SELECT * FROM user JOIN user_detail ON user.id_user_detail = user_detail.id_user_detail WHERE id_user_level=3 AND nama_lengkap is not null ");
         return $hasil->result_array();
         
     }
+
+  
+
 
     public function read_all_data_user_by_id($id_user)
     {
