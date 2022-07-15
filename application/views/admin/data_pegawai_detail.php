@@ -414,14 +414,6 @@
                                                             <input type="text" class="form-control" id="perihal"
                                                                 name="perihal" required>
                                                         </div>
-                                                        <div class="mb-3">
-                                                            <label for="alamat" class="form-label">Pesan
-                                                                Notifikasi</label>
-                                                            <textarea class="form-control"
-                                                                placeholder="Leave a comment here"
-                                                                id="floatingTextarea2" style="height: 100px"
-                                                                name="pesan" required></textarea>
-                                                        </div>
                                                         <div class="modal-footer">
                                                             <button type="submit"
                                                                 class="btn btn-primary">Submit</button>

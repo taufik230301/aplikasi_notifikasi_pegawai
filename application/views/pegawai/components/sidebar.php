@@ -11,20 +11,20 @@
                     href="<?=base_url();?>Jam_Kerja/view_pegawai/<?=$this->session->userdata('id_user');?>">
                     <div class="sb-nav-link-icon">
                         <i class="fas fa-clock"></i></div>
-                    Jam Kerja
+                    Laporan Jam Kerja
                 </a>
                 <a class="nav-link" href="<?=base_url();?>Cuti/view_pegawai/<?=$this->session->userdata('id_user');?>">
                     <div class="sb-nav-link-icon"><i class="fas fa-users"></i></div>
-                    Rooster
+                    Laporan Rooster
                 </a>
                 <a class="nav-link" href="<?=base_url();?>Notifikasi/view_pegawai/<?=$this->session->userdata('id_user');?>">
                     <div class="sb-nav-link-icon"><i class="fas fa-clipboard-list"></i></div>
                     Riwayat Jam Kerja
                 </a>
-                <a class="nav-link" href="<?=base_url();?>Lengkapi_Data/view_pegawai">
+                <!-- <a class="nav-link" href="<?=base_url();?>Lengkapi_Data/view_pegawai">
                     <div class="sb-nav-link-icon"><i class="fas fa-table"></i></div>
                     Lengkapi Data
-                </a>
+                </a> -->
                 <a class="nav-link" href="<?=base_url();?>Settings/view_pegawai">
                     <div class="sb-nav-link-icon"><i class="fas fa-table"></i></div>
                     Settings

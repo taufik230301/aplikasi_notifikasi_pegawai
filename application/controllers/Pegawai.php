@@ -66,6 +66,33 @@ class Pegawai extends CI_Controller {
 
 	}
 
+	public function tambah_pegawai()
+	{
+		$username = $this->input->post('username');
+		$email = $this->input->post('email');
+		$password = $this->input->post('password');
+		$nama_lengkap = $this->input->post('nama_lengkap');
+		$jabatan = $this->input->post('jabatan');
+		$title_posisi = $this->input->post('title_posisi');
+		$jenis_kelamin = $this->input->post('jenis_kelamin');
+		$no_telp = $this->input->post('no_telp');
+		$alamat = $this->input->post('alamat');
+
+		$id = md5($username.$email.$password.rand(1, 99999));
+
+		$hasil = $this->m_user->insert_pegawai($id, $username, $email, $password, $nama_lengkap, $jabatan, $title_posisi, $jenis_kelamin, $no_telp, $alamat);
+
+		if($hasil == false)
+		{
+			$this->session->set_flashdata('eror_insert','eror_insert');
+			redirect('Pegawai/view_admin');
+		}else{
+			$this->session->set_flashdata('insert','insert');
+			redirect('Pegawai/view_admin');
+		}
+
+	}
+
 	public function hapus_pegawai_admin()
 	{
 		$id = $this->input->post('id_user');

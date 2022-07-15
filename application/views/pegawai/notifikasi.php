@@ -12,15 +12,15 @@
         <div id="layoutSidenav_content">
             <main>
                 <div class="container-fluid px-4">
-                    <h1 class="mt-4">Riwayat Jam Kerja</h1>
+                    <h1 class="mt-4">Laporan Jam Kerja</h1>
                     <ol class="breadcrumb mb-4">
                         <li class="breadcrumb-item"><a href="<?=base_url();?>Dashboard/dashboard_pegawai">Dashboard</a></li>
-                        <li class="breadcrumb-item active">Data Riwayat Jam Kerja</li>
+                        <li class="breadcrumb-item active">Data Laporan Jam Kerja</li>
                     </ol>
                     <div class="card mb-4">
                         <div class="card-header">
                             <i class="fas fa-table me-1"></i>
-                            Data Riwayat Jam Kerja HRD
+                            Data Laporan Jam Kerja HRD
                         </div>
                         <div class="card-body">
                             <table id="datatablesSimple">

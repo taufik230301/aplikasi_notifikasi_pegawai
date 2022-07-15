@@ -10,6 +10,25 @@
     <script>
     swal({
         title: "Berhasil Dihapus!",
+        text: "Data Berhasil Dihapus!",
+        icon: "success"
+    });
+    </script>
+    <?php } ?>
+
+    <?php if ($this->session->flashdata('eror_insert')){ ?>
+    <script>
+    swal({
+        title: "Eror!",
+        text: "Gagal Menambahkan Data!",
+        icon: "error"
+    });
+    </script>
+    <?php } ?>
+    <?php if ($this->session->flashdata('insert')){ ?>
+    <script>
+    swal({
+        title: "Berhasil Ditambahkan!",
         text: "Data Berhasil Ditambahkan!",
         icon: "success"
     });
@@ -63,11 +82,11 @@
         <div id="layoutSidenav_content">
             <main>
                 <div class="container-fluid px-4">
-                    <h1 class="mt-4">Pegawai</h1>
+                    <h1 class="mt-4">Karyawan</h1>
                     <ol class="breadcrumb mb-4">
                         <li class="breadcrumb-item"><a href="<?=base_url();?>Dashboard/dashboard_admin">Dashboard</a>
                         </li>
-                        <li class="breadcrumb-item active">Data Pegawai</li>
+                        <li class="breadcrumb-item active">Data Karyawan</li>
                     </ol>
                     <button type="button" class="btn btn-primary" data-bs-toggle="modal"
                         data-bs-target="#tambah_pegawai">
@@ -76,7 +95,7 @@
                     <div class="card mb-4">
                         <div class="card-header">
                             <i class="fas fa-table me-1"></i>
-                            Data Pegawai Admin
+                            Data Karyawan Admin
                         </div>
                         <div class="card-body">
                             <table id="datatablesSimple">
@@ -84,6 +103,7 @@
                                     <tr>
                                         <th>No</th>
                                         <th>Nama Lengkap</th>
+                                        <th>Username</th>
                                         <th>Email</th>
                                         <th>Mulai Bekerja</th>
                                         <th>Akhir Bekerja</th>
@@ -100,6 +120,7 @@
                                             $id++;
                                             $id_user = $i['id_user'];
                                             $nama_lengkap = $i['nama_lengkap'];
+                                            $username = $i['username'];
                                             $email = $i['email'];
                                             $jabatan = $i['jabatan'];
                                             $mulai_bekerja = $i['mulai_bekerja'];
@@ -112,7 +133,15 @@
                                             <button type="button" class="btn btn-danger">Belum di isi</button>
                                             <?php }else {?>
                                             <?=$nama_lengkap?>
-                                            <?php } ?></td>
+                                            <?php } ?>
+                                        </td>
+
+                                        <td><?php  if($username == NULL){?>
+                                            <button type="button" class="btn btn-danger">Belum di isi</button>
+                                            <?php }else {?>
+                                            <?=$username?>
+                                            <?php } ?>
+                                        </td>
 
                                         <td><?php  if($email == NULL){?>
                                             <button type="button" class="btn btn-danger">Belum di isi</button>
@@ -190,7 +219,7 @@
                                             <div class="modal-content">
                                                 <div class="modal-header">
                                                     <h5 class="modal-title" id="exampleModalLabel">Verifikasi Data
-                                                        Pegawai</h5>
+                                                        Karyawan</h5>
                                                     <button type="button" class="btn-close" data-bs-dismiss="modal"
                                                         aria-label="Close"></button>
                                                 </div>
@@ -233,7 +262,7 @@ harap cek berkala dengan login ke aplikasi secara berkala, Trimakasih.</textarea
                 <div class="modal-dialog">
                     <div class="modal-content">
                         <div class="modal-header">
-                            <h5 class="modal-title" id="exampleModalLabel">Tambah Data Pegawai</h5>
+                            <h5 class="modal-title" id="exampleModalLabel">Tambah Data Karyawan</h5>
                             <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
                         </div>
                         <div class="modal-body">

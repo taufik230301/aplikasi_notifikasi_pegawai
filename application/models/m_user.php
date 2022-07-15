@@ -13,7 +13,7 @@ class M_user extends CI_Model
     public function read_all_data_user()
     {
         
-        $hasil=$this->db->query("SELECT * FROM user JOIN user_detail ON user.id_user_detail = user_detail.id_user_detail WHERE id_user_level=3 AND nama_lengkap is not null ");
+        $hasil=$this->db->query("SELECT * FROM user JOIN user_detail ON user.id_user_detail = user_detail.id_user_detail WHERE id_user_level=3 ");
         return $hasil->result_array();
         
     }
@@ -39,6 +39,20 @@ class M_user extends CI_Model
             return true;
         else
             return false;
+    }
+
+    public function insert_pegawai($id, $username, $email, $password, $nama_lengkap, $jabatan, $title_posisi, $jenis_kelamin, $no_telp, $alamat)
+    {
+        $this->db->trans_start();
+
+        $this->db->query("INSERT INTO user(id_user,username,password,email,id_user_level, id_user_detail) VALUES ('$id','$username','$password','$email','3','$id')");
+        $this->db->query("INSERT INTO user_detail(id_user_detail, nama_lengkap, jabatan, title_posisi, jenis_kelamin, no_telp, alamat, id_status_verifikasi) VALUES ('$id', '$nama_lengkap','$jabatan','$title_posisi','$jenis_kelamin','$no_telp','$alamat','1')");
+ 
+        $this->db->trans_complete();
+         if($this->db->trans_status()==true)
+             return true;
+         else
+             return false;
     }
 
     public function delete_user($id_user)

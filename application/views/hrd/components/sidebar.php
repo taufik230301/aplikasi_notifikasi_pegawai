@@ -7,7 +7,7 @@
                     <div class="sb-nav-link-icon"><i class="fas fa-tachometer-alt"></i></div>
                     Dashboard
                 </a>
-                <a class="nav-link" href="<?=base_url();?>Pegawai/view_hrd">
+                <!-- <a class="nav-link" href="<?=base_url();?>Pegawai/view_hrd">
                     <div class="sb-nav-link-icon"><i class="fas fa-users"></i></div>
                     Data Pegawai
                 </a>
@@ -15,14 +15,14 @@
                     <div class="sb-nav-link-icon">
                         <i class="fas fa-clock"></i></div>
                     Jam Kerja
-                </a>
+                </a> -->
                 <a class="nav-link" href="<?=base_url();?>Cuti/view_hrd">
                     <div class="sb-nav-link-icon"><i class="fas fa-table"></i></div>
-                    Rooster
+                    Laporan Rooster
                 </a>
                 <a class="nav-link" href="<?=base_url();?>Notifikasi/view_hrd">
                     <div class="sb-nav-link-icon"><i class="fas fa-clipboard-list"></i></div>
-                    Riwayat Jam Kerja
+                    Laporan Jam Kerja
                 </a>
                 <a class="nav-link" href="<?=base_url();?>Settings/view_hrd">
                     <div class="sb-nav-link-icon"><i class="fas fa-clipboard-list"></i></div>
