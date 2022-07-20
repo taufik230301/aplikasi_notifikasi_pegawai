@@ -14,13 +14,14 @@
                 <div class="container-fluid px-4">
                     <h1 class="mt-4">Rooster</h1>
                     <ol class="breadcrumb mb-4">
-                        <li class="breadcrumb-item"><a href="<?=base_url();?>Dashboard/dashboard_pegawai">Dashboard</a></li>
+                        <li class="breadcrumb-item"><a href="<?=base_url();?>Dashboard/dashboard_pegawai">Dashboard</a>
+                        </li>
                         <li class="breadcrumb-item active">Data Rooster</li>
                     </ol>
                     <div class="card mb-4">
                         <div class="card-header">
                             <i class="fas fa-table me-1"></i>
-                            Data Rooster Laporan
+                            Laporan Data Rooster
                         </div>
                         <div class="card-body">
                             <table id="datatablesSimple">
@@ -63,7 +64,7 @@
                     </div>
                 </div>
             </main>
-           
+
         </div>
     </div>
     <?php $this->load->view("pegawai/components/js.php") ?>

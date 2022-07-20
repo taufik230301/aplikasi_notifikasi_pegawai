@@ -20,7 +20,7 @@
                     <div class="card mb-4">
                         <div class="card-header">
                             <i class="fas fa-table me-1"></i>
-                            Data Rooster Admin
+                            Data Rooster
                         </div>
                         <div class="card-body">
                             <table id="datatablesSimple">
@@ -32,7 +32,6 @@
                                         <th>Tanggal Dikirim</th>
                                         <th>Tanggal Mulai Rooster</th>
                                         <th>Tanggal Berakhir Rooster</th>
-                                        <th>Aksi</th>
                                     </tr>
                                 </thead>
 
@@ -57,24 +56,7 @@
                                         <td><?=$tgl_dikirim?></td>
                                         <td><?=$mulai?></td>
                                         <td><?=$berakhir?></td>
-                                        <td>
-                                            <div class="table-responsive">
-                                                <div class="table table-striped table-hover ">
-                                                    <a href="" class="btn btn-primary" data-bs-toggle="modal"
-                                                        data-bs-target="#exampleModal">
-                                                        Edit <i class="nav-icon fas fa-edit"></i>
-                                                    </a>
-
-                                                </div>
-                                            </div>
-                                            <div class="table-responsive">
-                                                <div class="table table-striped table-hover ">
-                                                    <a href="" data-bs-toggle="modal" data-bs-target="#exampleModal"
-                                                        class="btn btn-danger">Hapus <i class="fas fa-trash"></i>
-                                                    </a>
-                                                </div>
-                                            </div>
-                                        </td>
+                                        
                                     </tr>
 
                                     <?php endforeach;?>

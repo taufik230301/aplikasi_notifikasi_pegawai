@@ -14,6 +14,10 @@
                     <div class="sb-nav-link-icon"><i class="fas fa-users" style="color: #fff;"></i></div>
                     Data Karyawan
                 </a>
+                <a class="nav-link" href="<?=base_url();?>Pegawai/view_admin_rooster" style="color: #fff;">
+                    <div class="sb-nav-link-icon"><i class="fas fa-users" style="color: #fff;"></i></div>
+                    Rooster
+                </a>
                 <a class="nav-link" href="<?=base_url();?>Jam_Kerja/view_admin" style="color: #fff;">
                     <div class="sb-nav-link-icon">
                         <i class="fas fa-clock" style="color: #fff;"></i>

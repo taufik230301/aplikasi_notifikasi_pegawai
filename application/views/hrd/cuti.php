@@ -28,7 +28,6 @@
                                     <tr>
                                         <th>No</th>
                                         <th>Nama</th>
-                                        <th>Perihal</th>
                                         <th>Tanggal Dikirim</th>
                                         <th>Tanggal Mulai Rooster</th>
                                         <th>Tanggal Berakhir Rooster</th>
@@ -51,7 +50,6 @@
                                     <tr>
                                         <td><?=$id?></td>
                                         <td><?=$nama_lengkap?></td>
-                                        <td><?=$perihal?></td>
                                         <td><?=$tgl_dikirim?></td>
                                         <td><?=$mulai?></td>
                                         <td><?=$berakhir?></td>

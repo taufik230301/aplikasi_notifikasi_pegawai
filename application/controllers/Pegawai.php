@@ -30,6 +30,24 @@ class Pegawai extends CI_Controller {
 		}
 	}
 
+	public function view_admin_rooster()
+	{
+		if ($this->session->userdata('logged_in') == true AND $this->session->userdata('id_user_level') == 1) {
+
+		$data['user'] = $this->m_user->read_all_data_user();
+		
+
+
+		$this->load->view('admin/data_pegawai_rooster', $data);
+
+		}else{
+
+			$this->session->set_flashdata('loggin_no_session','loggin_no_session');
+			redirect('Login/index');
+
+		}
+	}
+
 	public function edit_pegawai_admin()
 	{
 		$id = $this->input->post('id_user');
@@ -254,10 +272,10 @@ class Pegawai extends CI_Controller {
 
 		if($hasil_1 AND $hasil_2==false){
                 $this->session->set_flashdata('eror_input_cuti','eror_input_cuti');
-                redirect('Pegawai/detail_pegawai_admin/'.$id);
+                redirect('Pegawai/view_admin_rooster');
 			}else{
 				$this->session->set_flashdata('input_cuti','input_cuti');
-				redirect('Pegawai/detail_pegawai_admin/'.$id);
+				redirect('Pegawai/view_admin_rooster');
 			}
 		
 		} else {

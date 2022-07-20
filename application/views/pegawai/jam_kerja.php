@@ -74,9 +74,9 @@
                         <li class="breadcrumb-item"><a href="<?=base_url();?>Dashboard/dashboard_pegawai">Dashboard</a></li>
                         <li class="breadcrumb-item active">Data Jam Kerja</li>
                     </ol>
-                    <button type="button" class="btn btn-primary" data-bs-toggle="modal" data-bs-target="#exampleModal">
+                    <!-- <button type="button" class="btn btn-primary" data-bs-toggle="modal" data-bs-target="#exampleModal">
                         Tambah Data
-                    </button>
+                    </button> -->
                     <div class="card mb-4 mt-4">
                         <div class="card-header">
                             <i class="fas fa-table me-1"></i>
@@ -98,7 +98,7 @@
                                         <th>Mulai Bekerja</th>
                                         <th>Akhir Bekerja</th>
                                         <th>Hari</th>
-                                        <th>Aksi</th>
+                                        <!-- <th>Aksi</th> -->
                                     </tr>
                                 </thead>
                                 <tbody>
@@ -119,7 +119,7 @@
                                         <td><?=$jam_kerja_start?></td>
                                         <td><?=$jam_kerja_end?></td>
                                         <td><?=$hari?></td>
-                                        <td>
+                                        <!-- <td>
                                             <center>
                                                 <div class="table-responsive">
                                                     <div class="table table-striped table-hover ">
@@ -138,7 +138,7 @@
                                                     </div>
                                                 </div>
                                             </center>
-                                        </td>
+                                        </td> -->
                                     </tr>
                                     <div class="modal fade" id="delete_jam_kerja<?=$id_jam_kerja?>" tabindex="-1"
                                         aria-labelledby="exampleModalLabel" aria-hidden="true">

@@ -180,7 +180,7 @@
                                         </td>
                                     </tr>
                                     <tr>
-                                        <td>
+                                        <!-- <td>
                                             <?php 
                                             $now = time(); // or your date as well
                                             $your_date = strtotime($akhir_bekerja);
@@ -203,7 +203,8 @@
                                             <button type="button" class="btn btn-danger">Belum Butuh Rooster</button>
                                             <?php } ?>
 
-                                        </td>
+                                        </td> -->
+                                        <td></td>
                                         <td></td>
                                         <td style="text-align: right;"> <a href="" data-bs-toggle="modal"
                                                 data-bs-target="#edit<?=$id_user?>" class="btn btn-primary">Edit <i
