@@ -1,6 +1,6 @@
 <div id="layoutSidenav_nav">
     <nav class="sb-sidenav accordion sb-sidenav-dark" id="sidenavAccordion">
-        <div class="sb-sidenav-menu">
+        <div class="sb-sidenav-menu" style="background-color: #15536a;">
             <div class="nav">
                 <div class="sb-sidenav-menu-heading">Core</div>
                 <a class="nav-link" href="<?=base_url();?>Dashboard/dashboard_hrd">
@@ -10,12 +10,12 @@
                 <!-- <a class="nav-link" href="<?=base_url();?>Pegawai/view_hrd">
                     <div class="sb-nav-link-icon"><i class="fas fa-users"></i></div>
                     Data Pegawai
-                </a>
+                </a> -->
                 <a class="nav-link" href="<?=base_url();?>Jam_Kerja/view_hrd">
                     <div class="sb-nav-link-icon">
                         <i class="fas fa-clock"></i></div>
                     Jam Kerja
-                </a> -->
+                </a>
                 <a class="nav-link" href="<?=base_url();?>Cuti/view_hrd">
                     <div class="sb-nav-link-icon"><i class="fas fa-table"></i></div>
                     Laporan Rooster

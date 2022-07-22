@@ -1,9 +1,6 @@
 <div id="layoutSidenav_nav">
     <nav class="sb-sidenav accordion sb-sidenav-dark" id="sidenavAccordion">
-        <div class="sb-sidenav-menu" style="background: -webkit-linear-gradient(left, #571ee0, #4ad6da);
-    background: -o-linear-gradient(left,  #571ee0, #4ad6da);
-    background: -moz-linear-gradient(left,  #571ee0, #4ad6da);
-    background: linear-gradient(left,  #571ee0, #4ad6da);">
+        <div class="sb-sidenav-menu" style="background-color: #15536a">
             <div class="nav">
                 <div class="sb-sidenav-menu-heading" style="color: #fff;">Menu</div>
                 <a class="nav-link" href="<?=base_url();?>Dashboard/dashboard_admin" style="color: #fff;">

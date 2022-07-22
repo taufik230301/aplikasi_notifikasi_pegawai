@@ -1,4 +1,4 @@
-<nav class="sb-topnav navbar navbar-expand navbar-dark bg-primary" style="color:blue;">
+<nav class="sb-topnav navbar navbar-expand navbar-dark bg-custom" style="color:blue;">
     <!-- Navbar Brand-->
     <a class="navbar-brand ps-1" href="index.html" style="font-size:15px;">
     <img src="<?=base_url();?>assets/logo.ico" alt="" height="40px">    

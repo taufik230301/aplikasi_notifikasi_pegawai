@@ -1,4 +1,4 @@
-<nav class="sb-topnav navbar navbar-expand navbar-dark bg-dark">
+<nav class="sb-topnav navbar navbar-expand navbar-dark bg-custom">
     <!-- Navbar Brand-->
     <a class="navbar-brand ps-3" href="index.html">
         <img src="<?=base_url();?>assets/logo.ico" alt="" height="40px" style="font-size:15px;">PT Dizamatra Powerindo</a>
