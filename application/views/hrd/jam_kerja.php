@@ -28,7 +28,7 @@
                                     <tr>
                                         <th>No</th>
                                         <th>Nama</th>
-                                        <th>Jabatan</th>
+                                        <th>Department</th>
                                        
                                         <th>Lihat Jam Kerja</th>
                                     </tr>

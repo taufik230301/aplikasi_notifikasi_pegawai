@@ -388,7 +388,7 @@ harap cek berkala dengan login ke aplikasi secara berkala, Trimakasih.</textarea
                                         required>
                                 </div>
                                 <div class="mb-3">
-                                    <label for="jabatan" class="form-label">Jabatan</label>
+                                    <label for="jabatan" class="form-label">Department</label>
                                     <select class="form-select" aria-label="Default select example" name="jabatan"
                                         required>
                                         <option value="Supply Chain Management">Supply Chain Management</option>

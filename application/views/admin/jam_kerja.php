@@ -78,7 +78,7 @@
                                     <tr>
                                         <th>No</th>
                                         <th>Nama</th>
-                                        <th>Jabatan</th>
+                                        <th>Department</th>
                                         <th>Terakhir Dikirim</th>
                                         <th>Notif Jam Kerja</th>
                                         <th>Lihat Jam Kerja</th>

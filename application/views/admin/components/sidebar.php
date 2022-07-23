@@ -11,15 +11,15 @@
                     <div class="sb-nav-link-icon"><i class="fas fa-users" style="color: #fff;"></i></div>
                     Data Karyawan
                 </a>
-                <a class="nav-link" href="<?=base_url();?>Pegawai/view_admin_rooster" style="color: #fff;">
-                    <div class="sb-nav-link-icon"><i class="fas fa-users" style="color: #fff;"></i></div>
-                    Rooster
-                </a>
                 <a class="nav-link" href="<?=base_url();?>Jam_Kerja/view_admin" style="color: #fff;">
                     <div class="sb-nav-link-icon">
                         <i class="fas fa-clock" style="color: #fff;"></i>
                     </div>
                     Jam Kerja
+                </a>
+                <a class="nav-link" href="<?=base_url();?>Pegawai/view_admin_rooster" style="color: #fff;">
+                    <div class="sb-nav-link-icon"><i class="fas fa-users" style="color: #fff;"></i></div>
+                    Rooster
                 </a>
                 <a class="nav-link collapsed" href="#" style="color: #fff;" data-bs-toggle="collapse"
                     data-bs-target="#collapseLayouts" aria-expanded="false" aria-controls="collapseLayouts">

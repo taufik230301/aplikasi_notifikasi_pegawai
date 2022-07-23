@@ -126,7 +126,7 @@
                                     </tr>
                                     <tr>
                                         <td>
-                                            <h4>Jabatan </h4>
+                                            <h4>Department </h4>
                                         </td>
                                         <td>
                                             <h4>:</h4>
@@ -245,7 +245,7 @@
                                                                 name="email" value="<?=$email?>" required>
                                                         </div>
                                                         <div class="mb-3">
-                                                            <label for="jabatan" class="form-label">Jabatan</label>
+                                                            <label for="jabatan" class="form-label">Department</label>
                                                             <select class="form-select"
                                                                 aria-label="Default select example" name="jabatan">
                                                                 <option value="Supply Chain Management" <?php  if($jabatan == 'Supply Chain Management'){

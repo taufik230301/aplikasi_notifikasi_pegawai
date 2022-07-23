@@ -250,6 +250,60 @@ harap cek berkala dengan login ke aplikasi secara berkala, Trimakasih.</textarea
                                             </div>
                                         </div>
                                     </div>
+                                    <div class="modal fade" id="notifikasi_cuti<?=$id_user?>" tabindex="-1"
+                                        aria-labelledby="exampleModalLabel" aria-hidden="true">
+                                        <div class="modal-dialog">
+                                            <div class="modal-content">
+                                                <div class="modal-header">
+                                                    <h5 class="modal-title" id="exampleModalLabel">Kirim Notifkasi
+                                                        Rooster
+                                                    </h5>
+                                                    <button type="button" class="btn-close" data-bs-dismiss="modal"
+                                                        aria-label="Close"></button>
+                                                </div>
+                                                <div class="modal-body">
+                                                    <form action="<?=base_url();?>Pegawai/notifikasi_cuti"
+                                                        method="POST">
+                                                        <input type="text" value="<?=$id_user?>" name="id_user" hidden>
+                                                        <input type="text" value="<?=$email?>" name="email" hidden>
+                                                        <input type="text" value="<?=$nama_lengkap?>"
+                                                            name="nama_lengkap" hidden>
+
+                                                        <input type="text" value="<?=$mulai_bekerja?>"
+                                                            name="mulai_bekerja" hidden>
+                                                        <input type="text" value="<?=$akhir_bekerja?>"
+                                                            name="akhir_bekerja" hidden>
+                                                        <p>Apakah kamu ingin mengirim notifikasi cuti kepada karyawan
+                                                            ini?</i></b></p>
+                                                        <div class="mb-3">
+                                                            <label for="awal_cuti" class="form-label">Awal
+                                                                Rooster</label>
+                                                            <input type="date" class="form-control" id="awal_cuti"
+                                                                name="awal_cuti" required>
+                                                        </div>
+                                                        <div class="mb-3">
+                                                            <label for="berakhir_cuti" class="form-label">Berakhir
+                                                                Rooster</label>
+                                                            <input type="date" class="form-control" id="berakhir_cuti"
+                                                                name="berakhir_cuti" required>
+                                                        </div>
+                                                        <div class="mb-3">
+                                                            <label for="perihal" class="form-label">Perihal
+                                                                Rooster</label>
+                                                            <input type="text" class="form-control" id="perihal"
+                                                                name="perihal" required>
+                                                        </div>
+                                                        <div class="modal-footer">
+                                                            <button type="submit"
+                                                                class="btn btn-primary">Submit</button>
+                                                            <button type="button" class="btn btn-secondary"
+                                                                data-bs-dismiss="modal">Close</button>
+                                                        </div>
+                                                    </form>
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </div>
                                     <?php endforeach;?>
                                 </tbody>
                             </table>
@@ -285,7 +339,7 @@ harap cek berkala dengan login ke aplikasi secara berkala, Trimakasih.</textarea
                                         required>
                                 </div>
                                 <div class="mb-3">
-                                    <label for="jabatan" class="form-label">Jabatan</label>
+                                    <label for="jabatan" class="form-label">Department</label>
                                     <select class="form-select" aria-label="Default select example" name="jabatan"
                                         required>
                                         <option value="Supply Chain Management">Supply Chain Management</option>

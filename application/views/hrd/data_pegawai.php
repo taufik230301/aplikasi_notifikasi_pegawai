@@ -28,7 +28,7 @@
                                     <tr>
                                         <th>No</th>
                                         <th>Nama Lengkap</th>
-                                        <th>Jabatan</th>
+                                        <th>Department</th>
                                         <th>Jenis Kelamin</th>
                                         <th>No Telepon</th>
                                         <th>Alamat</th>
