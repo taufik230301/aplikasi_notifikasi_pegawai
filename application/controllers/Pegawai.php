@@ -237,7 +237,7 @@ class Pegawai extends CI_Controller {
 		$data =array(
 			"cuti" => array(
 				array(
-				"nama_lengkap" =>"Taufik",
+				"nama_lengkap" =>"$nama_lengkap",
 				"perihal" => "$perihal",
 				"mulai" => "$awal_cuti",
 				"berakhir" => "$berakhir_cuti"
