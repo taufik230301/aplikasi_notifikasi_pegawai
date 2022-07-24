@@ -298,7 +298,7 @@ class Pegawai extends CI_Controller {
 
 		// echo $data['total_jam_kerja']['total_jam_kerja'];
 		// die();
-		if($data['total_jam_kerja']['total_jam_kerja'] == 6){
+		if($data['total_jam_kerja']['total_jam_kerja'] == 7){
 
 		
 		// $pesan = "";
